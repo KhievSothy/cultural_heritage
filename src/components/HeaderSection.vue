@@ -13,7 +13,7 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="nav-item" :class="{ active: $route.path == '/' }">
-                         <router-link to="/" class="nav-link"> Home <span class="sr-only">(current)</span></router-link>
+                         <router-link to="/" class="nav-link"> Home 3 <span class="sr-only">(current)</span></router-link>
                     </li>
                     <li class="nav-item" :class="{ active: $route.path == '/about' }">
                          <router-link to="/about" class="nav-link">About</router-link>
