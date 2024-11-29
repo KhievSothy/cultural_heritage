@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2024 <a href="#">MCFA IT Team</a> Company. All rights reserved. 
+          <p>Copyright © 2025 <a href="#">MCFA IT Team</a> Company. All rights reserved. 
           <br>Design: MCFA IT Team</p>
         </div>
       </div>
