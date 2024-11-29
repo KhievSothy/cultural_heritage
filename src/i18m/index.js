@@ -3,7 +3,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
     en: {
-        home:"Home",
+        home:"Home4",
         historical:"Historical Sites",
         museum:"Museum",
         event:"Event",
