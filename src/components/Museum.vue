@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h4>Discover Our Historical Destination</h4>
-          <h2>Museum</h2>
+          <h2>Amazing Place to go &amp; More</h2>
           <div class="border-button"><a href="about.html">Discover More</a></div>
         </div>
       </div>
@@ -50,15 +50,15 @@
         <div class="col-lg-6 col-sm-6">
           <div class="item">
             <div class="row">
-              <div class="col-lg-6">
+              <div class="col-lg-12">
                 <div class="image">
-                  <img src="assets/images/deals-01.jpg" alt="">
+                  <img src="assets/images/banner-04.jpg" alt="">
                 </div>
               </div>
-              <div class="col-lg-6 align-self-center">
+              <div class="col-lg-12 align-self-center">
                 <div class="content">
-                  <h4>Why visit Angkor Wat temple</h4>
-                  <p> The most famous landmark in Cambodia, Angkor Wat is a massive temple complex built in the early 12th century. It is the largest religious monument in the world and a UNESCO World Heritage site.</p>
+                  <h4>National Museum of Cambodia</h4>
+                  <p> The National Museum of Cambodia is located on Street 13 in central Phnom Penh, next to the Royal Palace. The visitor's entrance to the compound and the admissions ticket booth are at the corner of Streets 13 and 178. </p>
                   <div class="main-button">
                     <a href="reservation.html">More</a>
                   </div>
@@ -72,13 +72,13 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="image">
-                  <img src="assets/images/deals-02.jpg" alt="">
+                  <img src="assets/images/Tuol_Sleng_M1.jpg" alt="">
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4>Koh Ker</h4>
-                  <p>Koh Ker is an ancient city located deep in the jungle. It is known for the Prasat Thom pyramid and its many other lesser-known temples. It is much less crowded than Angkor Wat.</p>
+                  <h4>Tuol Sleng Genocide museum</h4>
+                  <p>Tuol Sleng Genocide Museum is the memorial site of the S-21 interrogation and detention center of the Khmer Rouge regime. Located in the heart of Phnom Penh, it preserves evidence of a tragic period in Cambodian history with the aim of encouraging visitors to be messengers of peace.</p>
                   <div class="main-button">
                     <a href="reservation.html">More</a>
                   </div>
@@ -92,13 +92,13 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="image">
-                  <img src="assets/images/deals-03.jpg" alt="">
+                  <img src="assets/images/Cheoung_Ek_C1.jpg" alt="">
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4>Preah Vihear Temple</h4>
-                  <p>A UNESCO World Heritage site, Preah Vihear is a Hindu temple perched on a 525-meter cliff in the Dângrêk Mountains. It offers stunning views of the surrounding landscape.</p>
+                  <h4>Cheoung Ek Genocidal Center</h4>
+                  <p>Choeung Ek is a former orchard in Dangkao, Phnom Penh, Cambodia, that was used as a Killing Field between 1975 and 1979 by the Khmer Rouge in perpetrating the Cambodian genocide. Situated about 17 kilometres south of the city centre, it was attached to the Tuol Sleng detention centre.</p>
                   <div class="main-button">
                     <a href="reservation.html">More</a>
                   </div>
@@ -112,14 +112,13 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="image">
-                  <img src="assets/images/deals-04.jpg" alt="">
+                  <img src="assets/images/SSR_M1.jpg" alt="">
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4>Kulen Mountain</h4>
-                  <p>(also known as Phnom Kulen) is one of Cambodia’s most revered and beautiful natural landmarks, located in the northern part of Siem Reap Province, about 50 kilometers from Siem Reap city. 
-                    </p>
+                  <h4>SOSORO Museum</h4>
+                  <p>The SOSORO Museum is located in the heart of Phnom Penh, the capital city of Cambodia. Its protectorate style building was the former town hall residence in 1908, Phnom Penh municipality in 1920, and has been the Preah Srey Içanavarman Museum of Economy and Money since 2012.</p>
                   <div class="main-button">
                     <a href="reservation.html">More</a>
                   </div>
@@ -128,7 +127,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-12">
+        <!-- <div class="col-lg-12">
           <ul class="page-numbers">
             <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
             <li><a href="#">1</a></li>
@@ -136,7 +135,7 @@
             <li><a href="#">3</a></li>
             <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
