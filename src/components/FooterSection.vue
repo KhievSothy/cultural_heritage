@@ -1,5 +1,5 @@
 <template>
-      <div class="call-to-action">
+      <!-- <div class="call-to-action">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
@@ -8,7 +8,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <br><br>
     <footer>
     <div class="container">
       <div class="row">
