@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h4>Discover Our Historical Destination</h4>
-          <h2>Arsts</h2>
+          <h2>Arstss</h2>
           <div class="border-button"><a href="about.html">Discover More</a></div>
         </div>
       </div>
