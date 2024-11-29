@@ -6,7 +6,7 @@ const messages = {
         home:"Home",
         historical:"Historical Sites",
         museum:"Museum",
-        event:"Event",
+        event:"Events",
         arts:"Arts",
         about:"About" 
     },
