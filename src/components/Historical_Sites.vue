@@ -1,6 +1,66 @@
 <template>
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Discover Our Historical Destination</h4>
+          <h2>Historical</h2>
+          <div class="border-button">
+            <a href="about.html">Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form
+            id="search-form"
+            name="gs"
+            method="submit"
+            role="search"
+            action="#"
+          >
+            <div class="row">
+              <div class="col-lg-2">
+                <h4>Sort Deals By:</h4>
+              </div>
+              <div class="col-lg-4">
+                <fieldset>
+                  <select
+                    name="Location"
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="chooseLocation"
+                    onChange="this.form.click()"
+                  >
+                    <option selected>Destinations</option>
+                    <option type="checkbox" name="option1" value="Italy">
+                      Italy
+                    </option>
+                    <option value="France">Angkor Wat</option>
+                    <option value="Switzerland">Koh Ker</option>
+                    <option value="Thailand">Preah Vihear Temple</option>
+                    <option value="Australia">Kulen Mountain</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-2">
+                <fieldset>
+                  <button class="border-button">Search Results</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <main class="container" id="historical_site_container">
-    <h3 class="text-center">ទីតាំងប្រវត្តិសាស្រ្ត</h3>
+    <h3 class="text-center">{{ $t("historical") }}</h3>
     <hr />
     <div id="card_container">
       <div
@@ -85,7 +145,7 @@ export default {
 <style scoped>
 /* Main Container */
 #historical_site_container {
-  margin-top: 100px; /* Updated as requested */
+  margin-top: 40px; /* Updated as requested */
   text-align: center;
 }
 
@@ -161,8 +221,8 @@ export default {
   #card_container {
     grid-template-columns: 1fr; /* One item per row */
   }
-  #historical_site_container {
+  /* #historical_site_container {
     margin-top: 130px;
-  }
+  } */
 }
 </style>
