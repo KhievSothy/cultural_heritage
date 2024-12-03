@@ -44,90 +44,71 @@
     </div>
   </div>
 
-  <div class="amazing-deals">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-sm-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="image">
-                  <img src="assets/images/deals-01.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-lg-6 align-self-center">
-                <div class="content">
-                  <h4>Why visit Angkor Wat temple</h4>
-                  <p> The most famous landmark in Cambodia, Angkor Wat is a massive temple complex built in the early 12th century. It is the largest religious monument in the world and a UNESCO World Heritage site.</p>
-                  <div class="main-button">
-                    <a href="reservation.html">More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="image">
-                  <img src="assets/images/deals-02.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-lg-6 align-self-center">
-                <div class="content">
-                  <h4>Koh Ker</h4>
-                  <p>Koh Ker is an ancient city located deep in the jungle. It is known for the Prasat Thom pyramid and its many other lesser-known temples. It is much less crowded than Angkor Wat.</p>
-                  <div class="main-button">
-                    <a href="reservation.html">More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="image">
-                  <img src="assets/images/deals-03.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-lg-6 align-self-center">
-                <div class="content">
-                  <h4>Preah Vihear Temple</h4>
-                  <p>A UNESCO World Heritage site, Preah Vihear is a Hindu temple perched on a 525-meter cliff in the Dângrêk Mountains. It offers stunning views of the surrounding landscape.</p>
-                  <div class="main-button">
-                    <a href="reservation.html">More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="image">
-                  <img src="assets/images/deals-04.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-lg-6 align-self-center">
-                <div class="content">
-                  <h4>Kulen Mountain</h4>
-                  <p>(also known as Phnom Kulen) is one of Cambodia’s most revered and beautiful natural landmarks, located in the northern part of Siem Reap Province, about 50 kilometers from Siem Reap city. 
-                    </p>
-                  <div class="main-button">
-                    <a href="reservation.html">More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="amazing-deals album-art">
+    <section id="alt-services" class="alt-services section album-art">
+
+<div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+<div class="row gy-4">
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+    <div class="service-item position-relative">
+      <div class="img">
+        <img src="assets/images/art1.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="details">
+        <a href="#" class="stretched-link">
+          <h1 class ="h1">តូរ្យតន្រ្តី</h1>
+        </a>
+      </div>
+    </div>
+  </div><!-- End Service Item -->
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+    <div class="service-item position-relative">
+      <div class="img">
+        <img src="assets/images/art2.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="details">
+        <a href="#" class="stretched-link">
+          <h1 class ="h1">ល្ខោន</h1>
+        </a>
+      </div>
+    </div>
+  </div><!-- End Service Item -->
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+    <div class="service-item position-relative">
+      <div class="img">
+        <img src="assets/images/art3.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="details">
+        <a href="#" class="stretched-link">
+          <h1 class ="h1">សូនរូប</h1>
+        </a>
+      </div>
+    </div>
+  </div><!-- End Service Item -->
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="500">
+    <div class="service-item position-relative">
+      <div class="img">
+        <img src="assets/images/art4.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="details">
+        <a href="#" class="stretched-link">
+          <h1 class ="h1">សៀក</h1>
+        </a>
+        <a href="#" class="stretched-link"></a>
+      </div>
+    </div>
+  </div><!-- End Service Item -->
+
+</div>
+
+</div>
+
+</section>
         <div class="col-lg-12">
           <ul class="page-numbers">
             <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
@@ -138,8 +119,7 @@
           </ul>
         </div>
       </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -147,3 +127,89 @@ export default {
     
 }
 </script>
+
+<style scoped>
+@media (max-width: 1199px) {
+
+section,
+.section {
+scroll-margin-top: 100px;
+}
+}
+
+.album-art {
+margin-top: 20px;
+}
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+text-align: center;
+padding-bottom: 60px;
+position: relative;
+}
+
+.section-title h2 {
+font-size: 32px;
+font-weight: 700;
+margin-bottom: 15px;
+}
+
+.section-title p {
+margin-bottom: 0;
+}
+
+.h1 {
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Alt Services Section
+--------------------------------------------------------------*/
+.alt-services .img {
+border-radius: 8px;
+overflow: hidden;
+}
+
+.alt-services .img img {
+transition: 0.6s;
+}
+
+.alt-services .details {
+position: absolute;
+left: 100px;
+right: 100px;
+bottom: 20px;
+padding: 30px;
+transition: all ease-in-out 0.3s;
+text-align: center;
+border-radius: 8px;
+}
+
+.alt-services .details h3 {
+font-weight: 700;
+margin: 10px 0 15px 0;
+font-size: 22px;
+transition: ease-in-out 0.3s;
+}
+
+.alt-services .details p {
+color: color-mix(in srgb, var(--default-color), transparent 10%);
+line-height: 24px;
+font-size: 14px;
+margin-bottom: 0;
+}
+
+.alt-services .service-item:hover .details h3 {
+color: var(--accent-color);
+}
+
+.alt-services .service-item:hover .img img {
+transform: scale(1.2);
+}
+.details{
+background: rgba(49, 22, 122, 0.5);
+box-shadow: 0px 0 25px rgba(0, 0, 0, 0.5);
+}
+
+</style>
