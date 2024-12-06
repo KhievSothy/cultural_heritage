@@ -5,7 +5,7 @@
       class="container d-flex justify-content-between align-items-center"
     >
       <div id="logo">
-        <img src="assets/images/MoCFA_logo.png" alt="mocfa_logo" />
+        <img src="assets/images/logo.png" alt="mocfa_logo" />
       </div>
 
       <h4 id="header_title" class="text-white">
