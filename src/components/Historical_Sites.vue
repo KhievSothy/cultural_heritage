@@ -1,6 +1,66 @@
 <template>
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Discover Our Historical Destination</h4>
+          <h2>Historical</h2>
+          <div class="border-button">
+            <a href="about.html">Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form
+            id="search-form"
+            name="gs"
+            method="submit"
+            role="search"
+            action="#"
+          >
+            <div class="row">
+              <div class="col-lg-2">
+                <h4>Sort Deals By:</h4>
+              </div>
+              <div class="col-lg-4">
+                <fieldset>
+                  <select
+                    name="Location"
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="chooseLocation"
+                    onChange="this.form.click()"
+                  >
+                    <option selected>Destinations</option>
+                    <option type="checkbox" name="option1" value="Italy">
+                      Italy
+                    </option>
+                    <option value="France">Angkor Wat</option>
+                    <option value="Switzerland">Koh Ker</option>
+                    <option value="Thailand">Preah Vihear Temple</option>
+                    <option value="Australia">Kulen Mountain</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-2">
+                <fieldset>
+                  <button class="border-button">Search Results</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <main class="container" id="historical_site_container">
-    <h3 class="text-center">ទីតាំងប្រវត្តិសាស្រ្ត</h3>
+    <h3 class="text-center">{{ $t("historical") }}</h3>
     <hr />
     <div id="card_container">
       <div
@@ -44,7 +104,7 @@ export default {
           id: "3",
           title: "រមណីយដ្ឋានប្រាសាទសំបូរព្រៃគុក",
           desc: "ប្រាសាទសម្បូរព្រៃគុក. ឈ្មោះ: ប្រាសាទសម្បូរព្រៃគុក. អ្នកកសាង: ព្រះបាទឥសានវរ្ម័នទី១. កាលបរិច្ឆេទកសាង: សតវត្សរ៍ទី៧. ឧទ្ទិសថ្វាយ: ព្រហ្មញ្ញសាសនា. ស្ថាបត្យកម្ម: រចនាបថសម្បូរ. ទីតាំង: ភូមិសម្បូរ ឃុំសម្បូរ ស្រុកសម្បូរ ខេត្តកំពង់ធំ។",
-          img: "/assets/images/samborpriekuk.jpg",
+          img: "/assets/images/SomborprieKuk1.jpg",
         },
         {
           id: "4",
@@ -56,7 +116,7 @@ export default {
           id: "5",
           title: "រមណីយដ្ឋានប្រាសាទបន្ទាយឆ្នា",
           desc: "ប្រាសាទបន្ទាយឆ្មារជាប្រាសាទដែលត្រូវបានកសាងឡើងពីចុងសតវត្សរ៍ទី១២ដល់ដើមសតវត្សរ៍ទី១៣ ក្នុងរជ្ជកាលព្រះបាទជ័យវរ្ម័នទី៧ ដើម្បីឧទ្ទិសដល់បុត្រា និងមេទ័ព៤នាក់របស់ព្រះអង្គដែលបានពលីនៅក្នុងសមរភូមិដេញចាមនៅឆ្នាំ១១៧៧។ ",
-          img: "/assets/images/bantheaycat.jpg",
+          img: "/assets/images/bantheaCat.jpg",
         },
         {
           id: "6",
@@ -68,7 +128,7 @@ export default {
           id: "7",
           title: "រមណីយដ្ឋានប្រាសាទបាយ័ន",
           desc: "ប្រាសាទបាយ័ន គឺជា​ប្រាសាទ​ខ្មែរ​ដែលប្រកបដោយក្បូចក្បាច់រចនាល្អវិសេសទាក់ទងនឹងពុទ្ធសាសនាក្នុងប្រទេសកម្ពុជា។ ប្រាសាទបាយ័នត្រូវបានសាងសង់ឡើងនៅចុងសតវត្សទី១២ ឬដើមសតវត្សទី១៣ កសាងដោយព្រះបាទជ័យវរ្ម័នទី៧ ប្រាសាទនេះកសាងសម្រាប់ឧទ្ទិសថ្វាយដល់ព្រះពុទ្ធសាសនាមហាយាន មានទីតាំងស្ថិតនៅក្រុងអង្គរធំ។",
-          img: "/assets/images/Prasat_Bayon.JPG",
+          img: "/assets/images/bayoun.jpg",
         },
         {
           id: "8",
@@ -85,7 +145,7 @@ export default {
 <style scoped>
 /* Main Container */
 #historical_site_container {
-  margin-top: 100px; /* Updated as requested */
+  margin-top: 40px; /* Updated as requested */
   text-align: center;
 }
 
@@ -161,8 +221,8 @@ export default {
   #card_container {
     grid-template-columns: 1fr; /* One item per row */
   }
-  #historical_site_container {
+  /* #historical_site_container {
     margin-top: 130px;
-  }
+  } */
 }
 </style>

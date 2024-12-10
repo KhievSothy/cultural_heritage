@@ -8,7 +8,8 @@ const messages = {
         museum:"Museum",
         event:"Events",
         arts:"Arts",
-        about:"About" 
+        about:"About",
+        cultural_heritage: "Cultural Heritage"
     },
     khm: {
         home:"ទំព័រដើម",
@@ -16,7 +17,8 @@ const messages = {
         museum:"សារមន្ទីរ",
         event:"ព្រឹត្តិការណ៍វប្បធម៌",
         arts:"សិល្បៈ",
-        about:"អំពីយើង"
+        about:"អំពីយើង",
+        cultural_heritage: "បេតិកភណ្ឌវប្បធម៌"
     },
 }
 
