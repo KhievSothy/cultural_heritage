@@ -1,13 +1,13 @@
 <template>
-        <Museum/>
+        <DetailSM/>
 </template>
     
 <script>
-    import Museum from '@/components/Museum.vue';
-    
+import DetailSM from '@/components/DetailSM.vue';
+ 
     export default {
         components: {
-                Museum,
+                DetailSM,
         }
     }
 </script>
