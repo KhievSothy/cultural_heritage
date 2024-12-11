@@ -32,7 +32,7 @@
               </div>
               <div class="col-lg-2">                        
                   <fieldset>
-                      <button class="border-button">Search Results</button>
+                      <button class="border-button">Search Result</button>
                   </fieldset>
               </div>
             </div>
