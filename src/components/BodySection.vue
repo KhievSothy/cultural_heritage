@@ -1,123 +1,218 @@
 <template>
-      <div class="visit-country">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="section-heading">
-            <h2>Visit One Of Our Destination Now</h2>
-            <p>Cambodia, a country rich in history and tradition, is home to a diverse cultural heritage that spans over a thousand years. The nation’s heritage reflects its ancient kingdoms, deep spiritual roots, and the lasting influence of the Khmer Empire, all of which contribute to the unique identity of modern-day Cambodia. From its iconic architecture to its art, dance, music, and cuisine, Cambodia’s cultural heritage offers a window into the soul of a nation that has endured both triumph and tragedy.</p>
-          </div>
-        </div>
+  <div class="visit-country">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="section-heading">
+        <h2>{{ $t("Visit_One_Title") }}</h2>
+        <p>{{ $t("Visit_One") }}</p>
       </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="items">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="item">
-                  <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-                      <div class="image">
-                        <img src="assets/images/country-01.jpg" alt="">
-                      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="items">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="item">
+              <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                  <div class="image">
+                    <img src="assets/images/country-01.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-lg-8 col-sm-7">
+                  <div class="right-content">
+                    <h4>Angkor and Ancient Architecture</h4>
+                    <span>Siem Reap Province</span>
+                    <div class="main-button">
+                      <a href="about.html">Explore More</a>
                     </div>
-                    <div class="col-lg-8 col-sm-7">
-                      <div class="right-content">
-                        <h4>Angkor and Ancient Architecture</h4>
-                        <span>Siem Reap Province</span>
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                        <p>One of Cambodia’s most famous contributions to world heritage is the Angkor Archaeological Park, which houses the remains of the Khmer Empire's capital. The Angkor Wat temple, built in the 12th century, is the largest religious monument in the world and stands as a symbol of Cambodia.
+                    <p>One of Cambodia’s most famous contributions to world heritage is the Angkor Archaeological Park, which houses the remains of the Khmer Empire's capital. The Angkor Wat temple, built in the 12th century, is the largest religious monument in the world and stands as a symbol of Cambodia.
 
 The ancient architecture of Angkor and other temples throughout Cambodia are UNESCO World Heritage Sites, preserving the legacy of a once-powerful empire that thrived in Southeast Asia.</p>
-                        <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
+                    <div class="text-button">
+                      <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="item">
-                  <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-                      <div class="image">
-                        <img src="assets/images/country-02.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="col-lg-8 col-sm-7">
-                      <div class="right-content">
-                        <h4>Traditional Khmer Dance</h4>
-                        <span>Cambodia</span>
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                        <p>The classical dance of Cambodia, known as the Apsara dance, is a delicate and symbolic art form that has been practiced for centuries. It originated in the royal courts and is now performed at cultural events and in front of tourists. The movements in Apsara dance are characterized by slow, graceful gestures, and the dancers wear intricate costumes, often inspired by ancient Khmer clothing. The dance tells stories from Hindu and Buddhist mythology and is an important cultural tradition that has survived through the tumultuous periods of Cambodian history.</p>
-                        <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="item last-item">
-                  <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-                      <div class="image">
-                        <img src="assets/images/country-03.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="col-lg-8 col-sm-7">
-                      <div class="right-content">
-                        <h4>Museums</h4>
-                        <span>Cambodia</span>
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                        <p>Cambodia is home to several museums that play a vital role in preserving and promoting the country’s rich cultural heritage, history, and art. These institutions are important not only for education and research but also as places where visitors can connect with the nation's past, both glorious and painful. From ancient artifacts to the dark legacy of the Khmer Rouge, Cambodia’s museums offer a broad spectrum of experiences that highlight the nation's vibrant culture, religious traditions, and turbulent history.</p>
-
-                        <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <ul class="page-numbers">
-                  <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="side-bar-map">
-            <div class="row">
-              <div class="col-lg-12">
-                <div id="map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3994720.5313153905!2d99.96630780713132!3d12.105698693757775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310787bfd4dc3743%3A0xe4b7bfe089f41253!2sCambodia!5e0!3m2!1sen!2skh!4v1732732916259!5m2!1sen!2skh" width="100%" height="550px" frameborder="0" style="border:0; border-radius: 23px; " allowfullscreen=""></iframe>
+
+          <div class="col-lg-12">
+            <div class="item last-item">
+              <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                  <div class="image">
+                    <img src="assets/images/country-03.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-lg-8 col-sm-7">
+                  <div class="right-content">
+                    <h4>{{ $t("Museum_Title_H") }}</h4><br>
+                    <div class="main-button">
+                      <a href="about.html">Explore More</a>
+                    </div>
+                    <p>{{ $t("Museum_H") }}</p>
+
+                    <div class="text-button">
+                      <!-- <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a> -->
+                     
+                      <router-link to="/museum" class="nav-link">{{ $t("More") }}</router-link>
+                     
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="item">
+              <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                  <div class="image">
+                    <img src="assets/images/country-02.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-lg-8 col-sm-7">
+                  <div class="right-content">
+                    <h4>Traditional Khmer Dance</h4>
+                    <span>Cambodia</span>
+                    <div class="main-button">
+                      <a href="about.html">Explore More</a>
+                    </div>
+                    <p>The classical dance of Cambodia, known as the Apsara dance, is a delicate and symbolic art form that has been practiced for centuries. It originated in the royal courts and is now performed at cultural events and in front of tourists. The movements in Apsara dance are characterized by slow, graceful gestures, and the dancers wear intricate costumes, often inspired by ancient Khmer clothing. The dance tells stories from Hindu and Buddhist mythology and is an important cultural tradition that has survived through the tumultuous periods of Cambodian history.</p>
+                    <div class="text-button">
+                      <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-12">
+            <ul class="page-numbers">
+              <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+              <li><a href="#">1</a></li>
+              <li class="active"><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="side-bar-map">
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3994720.5313153905!2d99.96630780713132!3d12.105698693757775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310787bfd4dc3743%3A0xe4b7bfe089f41253!2sCambodia!5e0!3m2!1sen!2skh!4v1732732916259!5m2!1sen!2skh" width="100%" height="550px" frameborder="0" style="border:0; border-radius: 23px; " allowfullscreen=""></iframe>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </template>
-
 <script>
 export default {
-    
-}
+  data() {
+    return {
+      currentImage: 1,
+      imgs: ["assets/images/EN.png", "assets/images/kh.png"],
+    };
+  },
+  name: "App",
+  methods: {
+    changeLng() {
+      console.log(this.$i18n.locale);
+      if (this.$i18n.locale == "en") {
+        this.$i18n.locale = "khm";
+        this.currentImage = 0;
+      } else {
+        this.$i18n.locale = "en";
+        this.currentImage = 1;
+      }
+    },
+    toggleMenu() {
+      this.slideToggle("#nav_mobile", 500); // Toggles with a 500ms duration
+    },
+    slideToggle(selector, duration = 500) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+
+      const isHidden = window.getComputedStyle(el).display === "none";
+      if (isHidden) {
+        this.slideDown(el, duration);
+      } else {
+        this.slideUp(el, duration);
+      }
+    },
+    slideUp(el, duration = 500) {
+      el.style.height = `${el.offsetHeight}px`; // Set current height
+      el.style.transitionProperty = "height, margin, padding";
+      el.style.transitionDuration = `${duration}ms`;
+      el.style.overflow = "hidden";
+
+      requestAnimationFrame(() => {
+        el.style.height = "0";
+        el.style.paddingTop = "0";
+        el.style.paddingBottom = "0";
+        el.style.marginTop = "0";
+        el.style.marginBottom = "0";
+      });
+
+      setTimeout(() => {
+        el.style.display = "none";
+        el.style.removeProperty("height");
+        el.style.removeProperty("padding-top");
+        el.style.removeProperty("padding-bottom");
+        el.style.removeProperty("margin-top");
+        el.style.removeProperty("margin-bottom");
+        el.style.removeProperty("overflow");
+        el.style.removeProperty("transition-duration");
+        el.style.removeProperty("transition-property");
+      }, duration);
+    },
+    slideDown(el, duration = 500) {
+      el.style.removeProperty("display");
+      let display = window.getComputedStyle(el).display;
+
+      if (display === "none") display = "flex";
+      el.style.display = display;
+
+      const height = el.offsetHeight; // Measure height before collapsing
+
+      el.style.overflow = "hidden";
+      el.style.height = "0";
+      el.style.paddingTop = "0";
+      el.style.paddingBottom = "0";
+      el.style.marginTop = "0";
+      el.style.marginBottom = "0";
+      el.style.transitionProperty = "height, margin, padding";
+      el.style.transitionDuration = `${duration}ms`;
+
+      requestAnimationFrame(() => {
+        el.style.height = `${height}px`;
+        el.style.paddingTop = "";
+        el.style.paddingBottom = "";
+        el.style.marginTop = "";
+        el.style.marginBottom = "";
+      });
+
+      setTimeout(() => {
+        el.style.removeProperty("height");
+        el.style.removeProperty("overflow");
+        el.style.removeProperty("transition-duration");
+        el.style.removeProperty("transition-property");
+      }, duration);
+    },
+  },
+};
 </script>

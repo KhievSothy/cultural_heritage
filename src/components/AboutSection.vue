@@ -1,35 +1,5 @@
 <template>
-  <!-- ***** Main Banner Area Start ***** -->
-  <div class="about-main-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content">
-            <div class="blur-bg"></div>
-            <h4>EXPLORE OUR COUNTRY</h4>
-            <div class="line-dec"></div>
-            <h2>Welcome To Cambodia</h2>
-            <p>
-              Cambodia’s cultural heritage is a testament to the resilience and
-              spirit of its people. From the awe-inspiring temples of Angkor to
-              the traditional arts and vibrant festivals, Cambodia’s cultural
-              identity continues to thrive. While it faces challenges, including
-              the scars left by the Khmer Rouge, the country’s cultural heritage
-              remains a source of pride and inspiration. As Cambodia continues
-              to grow and evolve, its cultural richness will remain a vital part
-              of its national identity.
-            </p>
-            <div class="main-button">
-              <a href="reservation.html">Discover More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Main Banner Area End ***** -->
-
-  <main class="container mt-5">
+  <main class="container" style="margin-top: 150px">
     <h3 class="text-center">{{ $t("about") }}</h3>
     <hr />
     <div
@@ -52,30 +22,11 @@
 
       <div class="about_desc">
         <p>
-          ប្រទេសកម្ពុជា គឺជាប្រទេសមួយស្ថិតនៅផ្នែកខាងត្បូងនៃឧបទ្វីបឥណ្ឌូចិន
-          ក្នុងតំបន់អាស៊ីអាគ្នេយ៍។ ប្រទេសកម្ពុជាមានផ្ទៃក្រឡាសរុប ១៨១,០៣៥
-          គីឡូម៉ែត្រការ៉េ ដោយមានព្រំប្រទល់ជាប់នឹងប្រទេសថៃនៅភាគខាងលិចនិងពាយ័ព្យ
-          ប្រទេសឡាវនៅភាគឦសាន្ត ប្រទេសវៀតណាមនៅភាគខាងកើត
-          និងឈូងសមុទ្រថៃ​នៅភាគនិរតី។ រាជធានី និងទីក្រុងធំបំផុតក្នុងប្រទេសគឺ
-          រាជធានីភ្នំពេញ។
+          {{ $t("about_us_p1") }}
         </p>
         <br />
         <p>
-          ដោយមានប្រជាជន​ជាង ១៦ លាននាក់ កម្ពុជាស្ថិតក្នុងលំដាប់ទី៧២​ក្នុង​​លោក
-          ទី២៧ក្នុងទ្វីបអាស៊ី និងទី៧ក្នុងអាស៊ីអាគ្នេយ៍។
-          ប្រជាជនជិតពាក់កណ្តាលប្រមូលផ្តុំកុះករនៅតំបន់វាលរាប ទំហំប្រហែល ១៤%
-          នៃផ្ទៃសរុប។ សាសនាជាផ្លូវការ គឺ ព្រះពុទ្ធសាសនាថេរវាទ
-          ដែលកាន់ដោយប្រជាជនប្រហែល ៩០%។ ជន​ជាតិ​ភាគ​តិច​ក្នុង​ប្រទេស​នេះ រួមមាន:
-          ជនជាតិវៀតណាម ចិន ចាម និង​កុលសម្ព័ន្ធភ្នំ ៣០ ជនជាតិផ្សេងៗ​ទៀត។ រាជធានី​
-          និង ទីក្រុង​ធំ​បំផុតគឺ ​ភ្នំពេញ ដែលជា​មជ្ឈមណ្ឌល​នយោបាយ សេដ្ឋកិច្ច និង
-          ​វប្បធម៌​នៃ​កម្ពុជា។ កម្ពុជាជារដ្ឋឯកភាព
-          ក្រោមរបបរាជាធិបតេយ្យអាស្រ័យរដ្ឋធម្មនុញ្ញ​ និងរបបរដ្ឋសភាប្រជាធិបតេយ្យ
-          ដែលមានព្រះបាទនរោត្តម សីហមុនី ជ្រើសតាំងដោយក្រុមប្រឹក្សារាជសម្បត្តិ
-          ជាព្រះមហាក្សត្រ​ និងជាព្រះប្រមុខរដ្ឋ។ ប្រមុខរាជរដ្ឋាភិបាល មានហ៊ុន សែន
-          ជានាយករដ្ឋមន្ត្រី ជាមេដឹកនាំដែលកាន់តំណែងយូរបំផុតនៅ​អាស៊ី​អាគ្នេយ៍​
-          ដែលបានដឹកនាំប្រទេសកម្ពុជាអស់រយៈពេលជាង ​៣០ ឆ្នាំមក​ហើយ។
-          ឯមេដឹកនាំចលនាប្រឆាំងនិងដែលមានប្រជាប្រិយបំផុតក្នុងសង្គមខ្មែរគឺ
-          សម-រង្សុី ដែលធ្លាប់បានជាប់ជាតំណាងរាស្រ្តនៃនីតិកាលទី១ ឆ្នាំ១៩៩៣ មក។
+          {{ $t("about_us_p2") }}
         </p>
       </div>
     </div>
