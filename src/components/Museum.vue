@@ -1,9 +1,11 @@
 <template>
-  <div class="M-heading">
+  <div class="page-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>{{ $t("Welcome") }}</h2>
+          <h4>Discover Our Historical Destination</h4>
+          <h2>Amazing Place to go &amp; More</h2>
+          <div class="border-button"><a href="about.html">Discover More</a></div>
         </div>
       </div>
     </div>
@@ -42,92 +44,98 @@
     </div>
   </div>
 
-  <div class="amazing-M">
+  <div class="amazing-deals">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
+        <div class="col-lg-6 col-sm-6">
+          <div class="item">
             <div class="row">
               <div class="col-lg-12">
                 <div class="image">
-                  <router-link to="/detailn" class="nav-link"><img src="../../public/assets/images/NM_Cover.jpg" alt=""></router-link>
+                  <img src="assets/images/banner-04.jpg" alt="">
                 </div>
               </div>
               <div class="col-lg-12 align-self-center">
                 <div class="content">
-                  <h4>{{ $t("National_Museum_Title") }}</h4>
-                  <p>{{ $t("National_Museum") }}</p>
+                  <h4>National Museum of Cambodia</h4>
+                  <p> The National Museum of Cambodia is located on Street 13 in central Phnom Penh, next to the Royal Palace. The visitor's entrance to the compound and the admissions ticket booth are at the corner of Streets 13 and 178. </p>
                   <div class="main-button">
-                    <router-link to="/detailn" class="nav-link">{{ $t("More") }}</router-link>
+                    <a href="reservation.html">More</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
+        <div class="col-lg-6 col-sm-6">
+          <div class="item">
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="image">
-                  <router-link to="/detailts" class="nav-link"><img src="assets/images/Tuol_Sleng_M1.jpg" alt=""></router-link>
+                  <img src="assets/images/Tuol_Sleng_M1.jpg" alt="">
                 </div>
               </div>
-              <div class="col-lg-12 align-self-center">
+              <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4>{{ $t("Tuol_Sleng_Title") }}</h4>
-                  <p>{{ $t("Tuol_Sleng") }}</p>
+                  <h4>Tuol Sleng Genocide museum</h4>
+                  <p>Tuol Sleng Genocide Museum is the memorial site of the S-21 interrogation and detention center of the Khmer Rouge regime. Located in the heart of Phnom Penh, it preserves evidence of a tragic period in Cambodian history with the aim of encouraging visitors to be messengers of peace.</p>
                   <div class="main-button">
-                    <router-link to="/detailts" class="nav-link">{{ $t("More") }}</router-link>
+                    <a href="reservation.html">More</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
+        <div class="col-lg-6 col-sm-6">
+          <div class="item">
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="image">
-                  <router-link to="/detailce" class="nav-link"><img src="assets/images/Cheoung-Ek.jpg" alt=""></router-link>
+                  <img src="assets/images/Cheoung_Ek_C1.jpg" alt="">
                 </div>
               </div>
-              <div class="col-lg-12 align-self-center">
+              <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4>{{ $t("Cheoung_Ek_Title") }}</h4>
-                  <p>{{ $t("Cheoung_Ek") }}</p>
+                  <h4>Cheoung Ek Genocidal Center</h4>
+                  <p>Choeung Ek is a former orchard in Dangkao, Phnom Penh, Cambodia, that was used as a Killing Field between 1975 and 1979 by the Khmer Rouge in perpetrating the Cambodian genocide. Situated about 17 kilometres south of the city centre, it was attached to the Tuol Sleng detention centre.</p>
                   <div class="main-button">
-                    <router-link to="/detailce" class="nav-link">{{ $t("More") }}</router-link>
+                    <a href="reservation.html">More</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
+        <div class="col-lg-6 col-sm-6">
+          <div class="item">
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="image">
-                  <router-link to="/detailsm" class="nav-link"><img src="assets/images/SSR_M1.jpg" alt=""></router-link>
+                  <img src="assets/images/SSR_M1.jpg" alt="">
                 </div>
               </div>
-              <div class="col-lg-12 align-self-center">
+              <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4>{{ $t("SOSORO_Museum_Title") }}</h4>
-                  <p>{{ $t("SOSORO_Musuem") }}</p>
+                  <h4>SOSORO Museum</h4>
+                  <p>The SOSORO Museum is located in the heart of Phnom Penh, the capital city of Cambodia. Its protectorate style building was the former town hall residence in 1908, Phnom Penh municipality in 1920, and has been the Preah Srey Içanavarman Museum of Economy and Money since 2012.</p>
                   <div class="main-button">
-                    <router-link to="/detailsm" class="nav-link">{{ $t("More") }}</router-link>
+                    <a href="reservation.html">More</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- <div class="col-lg-12">
+          <ul class="page-numbers">
+            <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+          </ul>
+        </div> -->
       </div>
     </div>
   </div>
@@ -138,116 +146,3 @@ export default {
     
 }
 </script>
-<style scoped>
-.M-heading {
-  background-image: url("/public/assets/images/NM_Cover.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 260px 0px 300px 0px;
-  text-align: center;
-}
-
-.M-heading h2 {
-  font-size: 50px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 30px;
-}
-
-.amazing-M {
-  margin-top: 30px;
-}
-
-.amazing-M .item-M .image {
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.amazing-M .item-M {
-  background-color: #f7f7f7;
-  border-radius: 23px;
-  /* padding-right: 30px; */
-  margin-bottom: 30px;
-}
-
-.amazing-M .item-M span.info {
-  color: #31167a;
-  font-size: 15px;
-  /* margin-bottom: 20px; */
-  display: block;
-}
-
-.amazing-M .item-M h4 {
-  font-size: 20px;
-  font-weight: 700;
-  padding-bottom: 10px;
-  /* margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;  */
-  text-align: center;
-}
-
-.amazing-M .item-M i {
-  color: #777;
-  margin-right: 5px;
-}
-
-.amazing-M .item-M span.list {
-  font-size: 15px;
-  color: #afafaf;
-  font-weight: 500;
-}
-
-.amazing-M .item-M .content {
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.amazing-M .item-M .content .main-button{
-  text-align: center;
-}
-
-.amazing-M .item-M p {
-  padding-top: 10px;
-  margin-top: 10px;
-  border-top: 1px solid #ddd;
-  margin-bottom: 10px;
-}
-
-.amazing-M ul.page-numbers {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.amazing-M ul.page-numbers li {
-  display: inline-block;
-  margin: 0px 5px;
-}
-
-.amazing-M ul.page-numbers li a {
-  display: inline-block;
-  width: 46px;
-  height: 46px;
-  border: 1px solid #31167a;
-  line-height: 44px;
-  color: #31167a;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 50%;
-  transition: all .3s;
-}
-
-.amazing-M ul.page-numbers li.active a,
-.amazing-M ul.page-numbers li a:hover {
-  background-color: #31167a;
-  color: #fff;
-}
-
-.amazing-M ul.page-numbers li:first-child a,
-.amazing-M ul.page-numbers li:last-child a {
-  border: none;
-}
-</style>

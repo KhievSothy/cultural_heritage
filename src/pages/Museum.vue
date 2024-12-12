@@ -1,8 +1,8 @@
 <template>
         <Museum/>
-</template>
+    </template>
     
-<script>
+    <script>
     import Museum from '@/components/Museum.vue';
     
     export default {
@@ -10,4 +10,4 @@
                 Museum,
         }
     }
-</script>
+    </script>

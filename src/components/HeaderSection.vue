@@ -41,9 +41,9 @@
           </li>
           <li>
             <router-link to="/about" activeClass="link_active">
-              {{ $t("about") }}</router-link>
+              {{ $t("about") }}</router-link
+            >
           </li>
-          
           <li>
             <img
               @click="changeLng('en')"
@@ -226,7 +226,6 @@ export default {
   width: 100%;
   top: 0;
   z-index: 1000000;
-  opacity: 80%;
 }
 #nav_container {
   padding: 10px 0px;

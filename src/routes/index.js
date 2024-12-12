@@ -13,13 +13,6 @@ import Museum from "@/pages/Museum.vue"
 import Event from "@/pages/Event.vue"
 import Arts from '@/pages/Arts.vue'
 import About from "@/pages/About.vue"
-import DetailN from '@/components/DetailN.vue'
-import DetailTS from '@/components/DetailTS.vue'
-import DetailCE from '@/components/DetailCE.vue'
-import DetailSM from '@/components/DetailSM.vue'
-
-
-
 
 const routes = [
     { path: '/', component: Home },
@@ -28,10 +21,13 @@ const routes = [
     { path: '/event', component: Event },
     { path: '/arts', component: Arts },
     { path: '/about', component: About },
-    { path: '/detailn', component: DetailN },
-    { path: '/detailts', component: DetailTS },
-    { path: '/detailce', component: DetailCE},
-    { path: '/detailsm', component: DetailSM},
+
+    // { path: '/', component: Home },
+    // { path: '/about', component: About },
+    // { path: '/deals', component: Deals },
+    // { path: '/contact', component: Contact },
+    // { path: '/login', component: Login },
+    // { path: '/signup', component: Signup },
 
 ]
 
