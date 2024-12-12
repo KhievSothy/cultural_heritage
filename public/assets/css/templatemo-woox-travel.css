@@ -2063,14 +2063,15 @@ Deals Page Style
 }
 
 .amazing-deals .item .image {
-  border-radius: 20px;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
   overflow: hidden;
 }
 
 .amazing-deals .item {
   background-color: #f7f7f7;
   border-radius: 23px;
-  /* padding-right: 30px; */
+  padding-right: 30px;
   margin-bottom: 30px;
 }
 
