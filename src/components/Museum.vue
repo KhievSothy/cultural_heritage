@@ -42,96 +42,82 @@
     </div>
   </div>
 
-  <div class="amazing-M">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="image">
-                  <router-link to="/detailn" class="nav-link"><img src="../../public/assets/images/NM_Cover.jpg" alt=""></router-link>
-                </div>
-              </div>
-              <div class="col-lg-12 align-self-center">
-                <div class="content">
-                  <h4>{{ $t("National_Museum_Title") }}</h4>
-                  <p>{{ $t("National_Museum") }}</p>
-                  <div class="main-button">
-                    <router-link to="/detailn" class="nav-link">{{ $t("More") }}</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="image">
-                  <router-link to="/detailts" class="nav-link"><img src="assets/images/Tuol_Sleng_M1.jpg" alt=""></router-link>
-                </div>
-              </div>
-              <div class="col-lg-12 align-self-center">
-                <div class="content">
-                  <h4>{{ $t("Tuol_Sleng_Title") }}</h4>
-                  <p>{{ $t("Tuol_Sleng") }}</p>
-                  <div class="main-button">
-                    <router-link to="/detailts" class="nav-link">{{ $t("More") }}</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="amazing-deals album-art">
+    <section id="alt-services" class="alt-services section album-art">
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="image">
-                  <router-link to="/detailce" class="nav-link"><img src="assets/images/Cheoung-Ek.jpg" alt=""></router-link>
-                </div>
-              </div>
-              <div class="col-lg-12 align-self-center">
-                <div class="content">
-                  <h4>{{ $t("Cheoung_Ek_Title") }}</h4>
-                  <p>{{ $t("Cheoung_Ek") }}</p>
-                  <div class="main-button">
-                    <router-link to="/detailce" class="nav-link">{{ $t("More") }}</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="row gy-4">
 
-        <div class="col-lg-6 col-sm-12">
-          <div class="item-M">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="image">
-                  <router-link to="/detailsm" class="nav-link"><img src="assets/images/SSR_M1.jpg" alt=""></router-link>
-                </div>
-              </div>
-              <div class="col-lg-12 align-self-center">
-                <div class="content">
-                  <h4>{{ $t("SOSORO_Museum_Title") }}</h4>
-                  <p>{{ $t("SOSORO_Musuem") }}</p>
-                  <div class="main-button">
-                    <router-link to="/detailsm" class="nav-link">{{ $t("More") }}</router-link>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-item position-relative">
+            <div class="img">
+              <router-link to="/detailn" activeClass="link_active"><img src="assets/images/NM.jpg" class="img-fluid" alt=""></router-link>
+             </div>
+              <div class="details">
+                <router-link to="/detailn" activeClass="link_active">
+                  <h3 class ="h1">{{ $t("National_Museum_Title") }}</h3>
+                </router-link>
             </div>
           </div>
-        </div>
+        </div><!-- End Service Item -->
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+    <div class="service-item position-relative">
+      <div class="img">
+        <router-link to="/detailts" activeClass="link_active"><img src="assets/images/Tuol_Sleng_M.jpg" class="img-fluid" alt=""></router-link>
+      </div>
+      <div class="details">
+        <router-link to="/detailts" activeClass="link_active">
+          <h3 class ="h1">{{ $t("Tuol_Sleng_Title") }}</h3>
+        </router-link>
       </div>
     </div>
+  </div><!-- End Service Item -->
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+    <div class="service-item position-relative">
+      <div class="img">
+        <router-link to="/detailce" activeClass="link_active"><img src="assets/images/Cheoung-Ek.jpg" class="img-fluid" alt=""></router-link>
+      </div>
+      <div class="details">
+        <router-link to="/detailce" activeClass="link_active"><h3 class ="h1">
+          {{ $t("Cheoung_Ek_Title") }}</h3></router-link>
+      </div>
+    </div>
+  </div><!-- End Service Item -->
+
+  <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="500">
+    <div class="service-item position-relative">
+      <div class="img">
+        <router-link to="/detailsm" activeClass="link_active"><img src="assets/images/SSR_M1.jpg" class="img-fluid" alt=""></router-link>
+      </div>
+      <div class="details">
+        <router-link to="/detailsm" activeClass="link_active"><h3 class ="h1">
+          {{ $t("Cheoung_Ek_Title") }}</h3>
+        </router-link>
+      </div>
+    </div>
+  </div><!-- End Service Item -->
+
+</div>
+
+</div>
+
+</section>
+  <div class="col-lg-12">
+    <ul class="page-numbers">
+      <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+      <li><a href="#">1</a></li>
+      <li class="active"><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+    </ul>
   </div>
-</template>
+        
+</div>
+
+</template> 
 
 <script>
 export default {
@@ -146,6 +132,13 @@ export default {
   background-repeat: no-repeat;
   padding: 260px 0px 300px 0px;
   text-align: center;
+}
+
+.amazing-M .item-M .content {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .M-heading h2 {
@@ -171,83 +164,88 @@ export default {
   margin-bottom: 30px;
 }
 
-.amazing-M .item-M span.info {
-  color: #31167a;
-  font-size: 15px;
-  /* margin-bottom: 20px; */
-  display: block;
+
+@media (max-width: 1199px) {
+
+section,
+.section {
+scroll-margin-top: 100px;
+}
 }
 
-.amazing-M .item-M h4 {
-  font-size: 20px;
-  font-weight: 700;
-  padding-bottom: 10px;
-  /* margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;  */
-  text-align: center;
+.album-art {
+margin-top: 20px;
+}
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+text-align: center;
+padding-bottom: 60px;
+position: relative;
 }
 
-.amazing-M .item-M i {
-  color: #777;
-  margin-right: 5px;
+.section-title h2 {
+font-size: 32px;
+font-weight: 700;
+margin-bottom: 15px;
 }
 
-.amazing-M .item-M span.list {
-  font-size: 15px;
-  color: #afafaf;
-  font-weight: 500;
+.section-title p {
+margin-bottom: 0;
 }
 
-.amazing-M .item-M .content {
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+.h1 {
+  color: white;
 }
 
-.amazing-M .item-M .content .main-button{
-  text-align: center;
+/*--------------------------------------------------------------
+# Alt Services Section
+--------------------------------------------------------------*/
+.alt-services .img {
+border-radius: 8px;
+overflow: hidden;
 }
 
-.amazing-M .item-M p {
-  padding-top: 10px;
-  margin-top: 10px;
-  border-top: 1px solid #ddd;
-  margin-bottom: 10px;
+.alt-services .img img {
+transition: 0.6s;
 }
 
-.amazing-M ul.page-numbers {
-  text-align: center;
-  margin-top: 30px;
+.alt-services .details {
+position: absolute;
+left: 0px;
+right: 100px;
+bottom: 20px;
+padding: 30px;
+width: 100%;
+transition: all ease-in-out 0.3s;
+text-align: center;
+border-radius: 8px;
 }
 
-.amazing-M ul.page-numbers li {
-  display: inline-block;
-  margin: 0px 5px;
+.alt-services .details h3 {
+font-weight: 700;
+margin: 10px 0 15px 0;
+font-size: 22px;
+transition: ease-in-out 0.3s;
 }
 
-.amazing-M ul.page-numbers li a {
-  display: inline-block;
-  width: 46px;
-  height: 46px;
-  border: 1px solid #31167a;
-  line-height: 44px;
-  color: #31167a;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 50%;
-  transition: all .3s;
+.alt-services .details p {
+color: color-mix(in srgb, var(--default-color), transparent 10%);
+line-height: 24px;
+font-size: 14px;
+margin-bottom: 0;
 }
 
-.amazing-M ul.page-numbers li.active a,
-.amazing-M ul.page-numbers li a:hover {
-  background-color: #31167a;
-  color: #fff;
+.alt-services .service-item:hover .details h3 {
+color: var(--accent-color);
 }
 
-.amazing-M ul.page-numbers li:first-child a,
-.amazing-M ul.page-numbers li:last-child a {
-  border: none;
+.alt-services .service-item:hover .img img {
+transform: scale(1.2);
+}
+.details{
+background: rgba(49, 22, 122, 0.5);
+box-shadow: 0px 0 25px rgba(0, 0, 0, 0.5);
 }
 </style>
