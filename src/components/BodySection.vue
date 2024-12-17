@@ -18,22 +18,20 @@
               <div class="row">
                 <div class="col-lg-4 col-sm-5">
                   <div class="image">
-                    <img src="assets/images/country-01.jpg" alt="">
+                    <router-link to="/historical_Sites" class="nav-link">
+                      <img src="assets/images/AW.jpg" alt="">
+                    </router-link>
                   </div>
                 </div>
                 <div class="col-lg-8 col-sm-7">
                   <div class="right-content">
-                    <h4>Angkor and Ancient Architecture</h4>
-                    <span>Siem Reap Province</span>
-                    <div class="main-button">
-                      <a href="about.html">Explore More</a>
-                    </div>
-                    <p>One of Cambodia’s most famous contributions to world heritage is the Angkor Archaeological Park, which houses the remains of the Khmer Empire's capital. The Angkor Wat temple, built in the 12th century, is the largest religious monument in the world and stands as a symbol of Cambodia.
-
-The ancient architecture of Angkor and other temples throughout Cambodia are UNESCO World Heritage Sites, preserving the legacy of a once-powerful empire that thrived in Southeast Asia.</p>
-                    <div class="text-button">
-                      <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                    </div>
+                    <router-link to="/historical_Sites" class="nav-link">
+                      <h4>{{ $t("historical") }}</h4>
+                    </router-link>
+                    <p>{{ $t("History_H") }}</p>
+                  </div>
+                  <div class="main-button">
+                      <router-link to="/historical_Sites" class="nav-link">{{ $t("More") }}</router-link>
                   </div>
                 </div>
               </div>
@@ -45,24 +43,19 @@ The ancient architecture of Angkor and other temples throughout Cambodia are UNE
               <div class="row">
                 <div class="col-lg-4 col-sm-5">
                   <div class="image">
-                    <img src="assets/images/country-03.jpg" alt="">
+                    <router-link to="/museum" class="nav-link">
+                      <img src="assets/images/country-03.jpg" alt="">
+                    </router-link>
                   </div>
                 </div>
                 <div class="col-lg-8 col-sm-7">
                   <div class="right-content">
-                    <h4>{{ $t("Museum_Title_H") }}</h4><br>
-                    <div class="main-button">
-                      <a href="about.html">Explore More</a>
-                    </div>
+                    <router-link to="/museum" class="nav-link"><h4>{{ $t("Museum_Title_H") }}</h4></router-link>
                     <p>{{ $t("Museum_H") }}</p>
-
-                    <div class="text-button">
-                      <!-- <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a> -->
-                     
-                      <router-link to="/museum" class="nav-link">{{ $t("More") }}</router-link>
-                     
-                    </div>
                   </div>
+                  <div class="main-button">
+                      <router-link to="/museum" class="nav-link">{{ $t("More") }}</router-link>
+                    </div>
                 </div>
               </div>
             </div>

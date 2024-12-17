@@ -3,9 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h4>Discover Our Historical Destination</h4>
-          <h2>Arsts</h2>
-          <div class="border-button"><a href="about.html">Discover More</a></div>
+          <h2>{{ $t("Arts") }}</h2>
         </div>
       </div>
     </div>
@@ -54,12 +52,12 @@
   <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
     <div class="service-item position-relative">
       <div class="img">
-        <img src="assets/images/art1.jpg" class="img-fluid" alt="">
+        <router-link to="/musical" activeClass="link_active">
+          <img src="assets/images/art1.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
-        <a href="#" class="stretched-link">
-          <h1 class ="h1">តូរ្យតន្រ្តី</h1>
-        </a>
+        <router-link to="/musical" activeClass="link_active">
+          <h3 class ="h1">{{ $t("Music_Title") }}</h3></router-link>
       </div>
     </div>
   </div><!-- End Service Item -->
@@ -67,12 +65,12 @@
   <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
     <div class="service-item position-relative">
       <div class="img">
-        <img src="assets/images/art2.jpg" class="img-fluid" alt="">
+        <router-link to="/theater" activeClass="link_active">
+          <img src="assets/images/art2.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
-        <a href="#" class="stretched-link">
-          <h1 class ="h1">ល្ខោន</h1>
-        </a>
+        <router-link to="/theater" activeClass="link_active">
+          <h3 class ="h1">{{ $t("Theater_Title") }}</h3></router-link>
       </div>
     </div>
   </div><!-- End Service Item -->
@@ -84,7 +82,7 @@
       </div>
       <div class="details">
         <a href="#" class="stretched-link">
-          <h1 class ="h1">សូនរូប</h1>
+          <h3 class ="h1">សូនរូប</h3>
         </a>
       </div>
     </div>
@@ -97,7 +95,7 @@
       </div>
       <div class="details">
         <a href="#" class="stretched-link">
-          <h1 class ="h1">សៀក</h1>
+          <h3 class ="h1">សៀក</h3>
         </a>
         <a href="#" class="stretched-link"></a>
       </div>
@@ -129,6 +127,15 @@ export default {
 </script>
 
 <style scoped>
+.page-heading {
+  background-image: url(../../public/assets/images/arts.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 260px 0px 190px 0px;
+  text-align: center;
+}
+
 @media (max-width: 1199px) {
 
 section,
@@ -177,10 +184,11 @@ transition: 0.6s;
 
 .alt-services .details {
 position: absolute;
-left: 100px;
+left: 0px;
 right: 100px;
 bottom: 20px;
 padding: 30px;
+width: 100%;
 transition: all ease-in-out 0.3s;
 text-align: center;
 border-radius: 8px;
