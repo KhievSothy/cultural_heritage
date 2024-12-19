@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="search-form">
+  <!-- <div class="search-form">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -40,8 +40,11 @@
         </div>
       </div>
     </div>
+  </div> -->
+  <div id="historical_site_container">
+    <h3 class="text-center">{{ $t("arts") }}</h3>
+    <hr />
   </div>
-
   <div class="amazing-deals album-art">
     <section id="alt-services" class="alt-services section album-art">
 
@@ -127,12 +130,16 @@ export default {
 </script>
 
 <style scoped>
+#historical_site_container {
+  margin-top: 40px; /* Updated as requested */
+  text-align: center;
+}
 .page-heading {
   background-image: url(../../public/assets/images/arts.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 260px 0px 190px 0px;
+  padding: 260px 0px 300px 0px;
   text-align: center;
 }
 

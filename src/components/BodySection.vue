@@ -1,8 +1,8 @@
 <template>
   <div class="visit-country">
 <div class="container">
-  <div class="row">
-    <div class="col-lg-5">
+  <div class="row1">
+    <div class="col-lg-12">
       <div class="section-heading">
         <h2>{{ $t("Visit_One_Title") }}</h2>
         <p>{{ $t("Visit_One") }}</p>
@@ -62,39 +62,52 @@
           </div>
 
           <div class="col-lg-12">
-            <div class="item">
+            <div class="item last-item">
               <div class="row">
                 <div class="col-lg-4 col-sm-5">
                   <div class="image">
-                    <img src="assets/images/country-02.jpg" alt="">
+                    <router-link to="/event" class="nav-link">
+                      <img src="assets/images/Eventwf.jpg" alt="">
+                    </router-link>
                   </div>
                 </div>
                 <div class="col-lg-8 col-sm-7">
                   <div class="right-content">
-                    <h4>Traditional Khmer Dance</h4>
-                    <span>Cambodia</span>
-                    <div class="main-button">
-                      <a href="about.html">Explore More</a>
-                    </div>
-                    <p>The classical dance of Cambodia, known as the Apsara dance, is a delicate and symbolic art form that has been practiced for centuries. It originated in the royal courts and is now performed at cultural events and in front of tourists. The movements in Apsara dance are characterized by slow, graceful gestures, and the dancers wear intricate costumes, often inspired by ancient Khmer clothing. The dance tells stories from Hindu and Buddhist mythology and is an important cultural tradition that has survived through the tumultuous periods of Cambodian history.</p>
-                    <div class="text-button">
-                      <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                    </div>
+                    <router-link to="/event" class="nav-link"><h4>{{ $t("event") }}</h4></router-link>
+                    <p>{{ $t("Event_H") }}</p>
                   </div>
+                  <div class="main-button">
+                      <router-link to="/event" class="nav-link">{{ $t("More") }}</router-link>
+                    </div>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-12">
-            <ul class="page-numbers">
-              <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-              <li><a href="#">1</a></li>
-              <li class="active"><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
-            </ul>
+            <div class="item last-item">
+              <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                  <div class="image">
+                    <router-link to="/museum" class="nav-link">
+                      <img src="assets/images/artH.jpg" alt="">
+                    </router-link>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-sm-7">
+                  <div class="right-content">
+                    <router-link to="/arts" class="nav-link"><h4>{{ $t("arts") }}</h4></router-link>
+                    <p>{{ $t("Art_H") }}</p>
+                  </div>
+                  <div class="main-button">
+                      <router-link to="/arts" class="nav-link">{{ $t("More") }}</router-link>
+                    </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          
         </div>
       </div>
     </div>
@@ -108,6 +121,16 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="col-lg-12">
+        <ul class="page-numbers">
+          <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+          <li><a href="#">1</a></li>
+          <li class="active"><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+        </ul>
     </div>
   </div>
 </div>
@@ -209,3 +232,21 @@ export default {
   },
 };
 </script>
+<style scoped>
+.row1{
+  
+  --bs-gutter-x:1.5rem;
+  --bs-gutter-y:0;
+  /* display:flex; */
+  flex-wrap:wrap;
+  margin-top:calc(-1 * var(--bs-gutter-y));
+  margin-right:calc(-.5 * var(--bs-gutter-x));
+  margin-left:calc(-.5 * var(--bs-gutter-x))
+  }
+  .row1 h2{
+    text-align: center;
+  }
+  .visit-country ul.page-numbers {
+    text-align: center;
+  }
+</style>

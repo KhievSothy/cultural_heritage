@@ -3,45 +3,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>{{ $t("Welcome") }}</h2>
+          <h2>{{ $t("museum") }}</h2>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="search-form">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <form id="search-form" name="gs" method="submit" role="search" action="#">
-            <div class="row">
-              <div class="col-lg-2">
-                <h4>Sort Deals By:</h4>
-              </div>
-              <div class="col-lg-4">
-                  <fieldset>
-                      <select name="Location" class="form-select" aria-label="Default select example" id="chooseLocation" onChange="this.form.click()">
-                          <option selected>Destinations</option>
-                          <option type="checkbox" name="option1" value="Italy">Italy</option>
-                          <option value="France">Angkor Wat</option>
-                          <option value="Switzerland">Koh Ker</option>
-                          <option value="Thailand">Preah Vihear Temple</option>
-                          <option value="Australia">Kulen Mountain</option>
-                      </select>
-                  </fieldset>
-              </div>
-              <div class="col-lg-2">                        
-                  <fieldset>
-                      <button class="border-button">Search Result</button>
-                  </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+  <div id="historical_site_container">
+    <h3 class="text-center">{{ $t("museum") }}</h3>
+    <hr />
   </div>
-
 
   <div class="amazing-deals album-art">
     <section id="alt-services" class="alt-services section album-art">
@@ -125,6 +96,10 @@ export default {
 }
 </script>
 <style scoped>
+#historical_site_container {
+  margin-top: 40px; /* Updated as requested */
+  text-align: center;
+}
 .M-heading {
   background-image: url("/public/assets/images/NM_Cover.jpg");
   background-position: center center;

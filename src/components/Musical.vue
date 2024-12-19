@@ -18,7 +18,7 @@
           <div class="col-lg-3 col-sm-12">
              <div class="item-MN">
                 <div class="col-lg-12">
-                  <div class="image"><img src="../../public/assets/images/art01.jpg" alt="img01"></div>
+                  <div class="image"><img src="../../public/assets/images/Music03.jpg" alt="img01"></div>
                 </div>
               </div>
           </div>
