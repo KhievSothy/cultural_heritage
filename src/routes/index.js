@@ -19,6 +19,9 @@ import DetailCE from '@/components/DetailCE.vue'
 import DetailSM from '@/components/DetailSM.vue'
 import Musical from '@/components/Musical.vue'
 import Theater from '@/components/Theater.vue'
+import DetailWF from '@/components/DetailWF.vue'
+import DetailBB from '@/components/DetailBB.vue'
+import DetailKNY from '@/components/DetailKNY.vue'
 
 
 
@@ -36,6 +39,9 @@ const routes = [
     { path: '/detailsm', component: DetailSM},
     { path: '/musical', component: Musical},
     { path: '/theater', component: Theater},
+    { path: '/water_festival', component: DetailWF},
+    { path: '/pchum_ben', component: DetailBB},
+    { path: '/khmer_new_year', component: DetailKNY},
 ]
 
 const router = createRouter({

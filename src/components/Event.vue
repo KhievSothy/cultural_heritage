@@ -21,10 +21,10 @@
           <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
           <div class="service-item position-relative">
             <div class="img">
-              <router-link to="/detailn" activeClass="link_active"><img src="assets/images/wf05.jpg" class="img-fluid" alt=""></router-link>
+              <router-link to="/water_festival" activeClass="link_active"><img src="assets/images/wf05.jpg" class="img-fluid" alt=""></router-link>
              </div>
               <div class="details">
-                <router-link to="/detailn" activeClass="link_active">
+                <router-link to="/water_festival" activeClass="link_active">
                   <h3 class ="h1">{{ $t("Water_Festival_Title") }}</h3>
                 </router-link>
             </div>
@@ -34,10 +34,10 @@
   <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
     <div class="service-item position-relative">
       <div class="img">
-        <router-link to="/detailts" activeClass="link_active"><img src="assets/images/bb02.jpg" class="img-fluid" alt=""></router-link>
+        <router-link to="/pchum_ben" activeClass="link_active"><img src="assets/images/bb02.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
-        <router-link to="/detailts" activeClass="link_active">
+        <router-link to="/pchum_ben" activeClass="link_active">
           <h3 class ="h1">{{ $t("PB_Festival_Title") }}</h3>
         </router-link>
       </div>
@@ -47,10 +47,10 @@
   <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
     <div class="service-item position-relative">
       <div class="img">
-        <router-link to="/detailce" activeClass="link_active"><img src="assets/images/khny05.jpg" class="img-fluid" alt=""></router-link>
+        <router-link to="/khmer_new_year" activeClass="link_active"><img src="assets/images/khny05.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
-        <router-link to="/detailce" activeClass="link_active"><h3 class ="h1">
+        <router-link to="/khmer_new_year" activeClass="link_active"><h3 class ="h1">
           {{ $t("Khmer_NewY_Title") }}</h3></router-link>
       </div>
     </div>
@@ -59,10 +59,10 @@
   <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="500">
     <div class="service-item position-relative">
       <div class="img">
-        <router-link to="/detailsm" activeClass="link_active"><img src="assets/images/aks05.jpg" class="img-fluid" alt=""></router-link>
+        <router-link to="/" activeClass="link_active"><img src="assets/images/aks05.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
-        <router-link to="/detailsm" activeClass="link_active"><h3 class ="h1">
+        <router-link to="/" activeClass="link_active"><h3 class ="h1">
           {{ $t("Angkor_Sangkran_Title") }}</h3>
         </router-link>
       </div>
@@ -72,10 +72,10 @@
   <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="500">
     <div class="service-item position-relative">
       <div class="img">
-        <router-link to="/detailsm" activeClass="link_active"><img src="assets/images/SeaF.jpg" class="img-fluid" alt=""></router-link>
+        <router-link to="/" activeClass="link_active"><img src="assets/images/SeaF.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
-        <router-link to="/detailsm" activeClass="link_active"><h3 class ="h1">
+        <router-link to="/" activeClass="link_active"><h3 class ="h1">
           {{ $t("SeaF_Titla") }}</h3>
         </router-link>
       </div>
@@ -85,11 +85,11 @@
   <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="500">
     <div class="service-item position-relative">
       <div class="img">
-        <router-link to="/detailsm" activeClass="link_active"><img src="assets/images/SSR_M1.jpg" class="img-fluid" alt=""></router-link>
+        <router-link to="/" activeClass="link_active"><img src="assets/images/marathon.jpg" class="img-fluid" alt=""></router-link>
       </div>
       <div class="details">
         <router-link to="/detailsm" activeClass="link_active"><h3 class ="h1">
-          {{ $t("Cheoung_Ek_Title") }}</h3>
+          {{ $t("Marathon") }}</h3>
         </router-link>
       </div>
     </div>

@@ -67,7 +67,7 @@
                 <div class="col-lg-4 col-sm-5">
                   <div class="image">
                     <router-link to="/event" class="nav-link">
-                      <img src="assets/images/Eventwf.jpg" alt="">
+                      <img src="assets/images/WF.jpg" alt="">
                     </router-link>
                   </div>
                 </div>
@@ -89,7 +89,7 @@
               <div class="row">
                 <div class="col-lg-4 col-sm-5">
                   <div class="image">
-                    <router-link to="/museum" class="nav-link">
+                    <router-link to="/arts" class="nav-link">
                       <img src="assets/images/artH.jpg" alt="">
                     </router-link>
                   </div>
