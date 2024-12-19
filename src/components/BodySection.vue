@@ -13,8 +13,9 @@
     <div class="col-lg-8">
       <div class="items">
         <div class="row">
+          
           <div class="col-lg-12">
-            <div class="item">
+            <div class="item last-item">
               <div class="row">
                 <div class="col-lg-4 col-sm-5">
                   <div class="image">
