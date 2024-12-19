@@ -58,6 +58,7 @@
         <i class="fa-solid fa-bars"></i>
       </div>
     </div>
+    <!-- navigation -->
     <div id="nav_mobile">
       <ul class="d-flex flex-column align-items-center">
         <li>

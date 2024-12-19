@@ -65,7 +65,7 @@
       </div>
       <div class="details">
         <router-link to="/detailsm" activeClass="link_active"><h3 class ="h1">
-          {{ $t("Cheoung_Ek_Title") }}</h3>
+          {{ $t("SOSORO_Museum_Title") }}</h3>
         </router-link>
       </div>
     </div>
