@@ -980,8 +980,8 @@ Banner Style
 #section-1 .content-slider #banner3:checked ~ nav label:nth-of-type(3),
 #section-1 .content-slider #banner4:checked ~ nav label:nth-of-type(4) {
   cursor: default;
-  z-index: ;
-  :#fff ;
+  z-index: 1;
+  color: #fff;
   transition: all 0.5s;
 }
 #section-1
@@ -1796,10 +1796,10 @@ body #user-button:focus-within .u-icons {
 }
 
 @media (prefers-color-scheme: dark) {
-  body:not(.light) {
+  /* body:not(.light) {
     background: #232223;
     color: white;
-  }
+  } */
 }
 body .credit {
   position: absolute;

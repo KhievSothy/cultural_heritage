@@ -1,42 +1,141 @@
 <template>
-  <div class="page-heading">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h4>{{ $t("discover_historical") }}</h4>
-          <h2>{{ $t("historical") }}</h2>
+  <h2>ទីតាំងប្រវត្តិសាស្ត្រ</h2>
+  <button
+    class="btn btn-primary mt-3"
+    data-bs-toggle="modal"
+    data-bs-target="#hsModal"
+    id="btnOpenModal"
+  >
+    <i class="fa-solid fa-plus"></i> បង្កើតថ្មី
+  </button>
+  <hr />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">លេខរៀង</th>
+        <th scope="col">ចំណងជើងជាភាសាខ្មែរ</th>
+        <th scope="col">ចំណងជើងជាភាសាអង់គ្លេស</th>
+        <th class="text-center" scope="col">បើកដំណើរការ</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in historical_site_data" :key="item.id">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.title_kh }}</td>
+        <td>{{ item.title_en }}</td>
+        <td class="text-center">
+          <h6>
+            <span v-if="item.is_enable" class="badge text-bg-success">បើក</span>
+          </h6>
+          <h6>
+            <span v-if="!item.is_enable" class="badge text-bg-danger">បិទ</span>
+          </h6>
+        </td>
+        <td>
+          <button class="btn btn-warning btn-sm" v-on:click="Edit(item.id)">
+            កែប្រែ
+          </button>
+          <button
+            class="btn btn-danger btn-sm"
+            v-on:click="Delete(item.id)"
+            style="margin-left: 5px"
+          >
+            លុប
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+
+  <div
+    class="modal fade"
+    id="hsModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="hsLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="hsLabel">ទីតាំងប្រវត្តិសាស្ត្រ</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >ចំណងជើងជាភាសាខ្មែរ</label
+                >
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >ចំណងជើងជាភាសាអង់គ្លេស</label
+                >
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="form-label">ការពិពណ៌នាជាភាសាខ្មែរ</label>
+                <textarea class="form-control" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="form-label">ការពិពណ៌នាជាភាសាអង់គ្លេស</label>
+                <textarea class="form-control" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label for="">បើកដំណើរការ</label>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                  checked
+                  style="padding: 10px 20px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            បិទ
+          </button>
+          <button type="button" class="btn btn-primary">បង្កើត</button>
         </div>
       </div>
     </div>
   </div>
-
-  <main class="container" id="historical_site_container">
-    <h3 class="text-center">{{ $t("historical") }}</h3>
-    <hr />
-    <div id="card_container">
-      <div
-        class="site_card"
-        v-for="item in historical_site_data"
-        :key="item.id"
-        v-on:click="toDetail(item.id)"
-      >
-        <!-- Image Section -->
-        <div class="img-container">
-          <img class="rounded" :src="item.img" alt="Historical Site" />
-        </div>
-        <!-- Text Section -->
-        <div class="desc_container">
-          <h4 class="card_title">
-            {{ current_lang == "en" ? item.title_en : item.title_kh }}
-          </h4>
-          <hr />
-          <p class="card_desc">
-            {{ current_lang == "en" ? item.desc_en : item.desc_kh }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </main>
 </template>
 
 <script>
@@ -142,94 +241,22 @@ export default {
     };
   },
   methods: {
-    toDetail() {
-      this.$router.push("/historical_sites/test");
+    Delete(id) {
+      this.$toast.success(`Deleted Id: ${id}!`);
+    },
+    Edit(id) {
+      document.getElementById("btnOpenModal").click();
+      this.$toast.success(`Edit Id: ${id}!`);
     },
   },
 };
 </script>
 
-<style scoped>
-/* Main Container */
-#historical_site_container {
-  margin-top: 40px; /* Updated as requested */
-  text-align: center;
-}
-
-#card_container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two items per row by default */
-  gap: 20px;
-  padding: 20px;
-  align-items: stretch; /* Ensures all items are stretched */
-}
-
-/* Card Styles */
-.site_card {
-  display: flex;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
-  height: 100%;
-}
-
-.site_card:hover {
-  transform: scale(1.03); /* Slightly enlarge the card */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-  cursor: pointer;
-}
-
-/* Image Section */
-.img-container {
-  flex: 0 0 150px; /* Fixed width */
-  height: auto; /* Image height will stretch dynamically */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image fills the container without distortion */
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-/* Description Section */
-.desc_container {
-  flex: 1;
-  padding: 15px;
-  text-align: left;
-  display: flex;
-  flex-direction: column; /* Align text vertically */
-}
-
-/* Title Style */
-.card_title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.card_desc {
-  font-size: 1rem;
-  color: #555;
-  margin: 0;
-  line-height: 1.5; /* Improve readability */
-}
-
-/* Media Query for smaller screens (less than 992px) */
-@media (max-width: 992px) {
-  #card_container {
-    grid-template-columns: 1fr; /* One item per row */
-  }
-  /* #historical_site_container {
-    margin-top: 130px;
-  } */
+<style>
+table,
+tr,
+th,
+td {
+  vertical-align: middle;
 }
 </style>
