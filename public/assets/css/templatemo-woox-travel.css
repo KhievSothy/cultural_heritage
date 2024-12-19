@@ -1063,7 +1063,7 @@ Visit Country Style
 .visit-country .item {
   position: relative;
   margin-bottom: 30px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   border-bottom: 1px solid #eee;
 }
 
@@ -2114,7 +2114,8 @@ Deals Page Style
 
 .amazing-deals ul.page-numbers {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: -20px;
 }
 
 .amazing-deals ul.page-numbers li {

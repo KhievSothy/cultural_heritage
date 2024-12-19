@@ -97,7 +97,7 @@ export default {
 </script>
 <style scoped>
 #historical_site_container {
-  margin-top: 40px; /* Updated as requested */
+  margin-top: 20px; /* Updated as requested */
   text-align: center;
 }
 .M-heading {

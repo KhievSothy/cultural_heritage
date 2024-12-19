@@ -1,5 +1,5 @@
 <template>
-  <div class="visit-country">
+<div class="visit-country">
 <div class="container">
   <div class="row1">
     <div class="col-lg-12">
@@ -234,6 +234,10 @@ export default {
 };
 </script>
 <style scoped>
+.visit-country {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
 .row1{
   
   --bs-gutter-x:1.5rem;
@@ -249,5 +253,11 @@ export default {
   }
   .visit-country ul.page-numbers {
     text-align: center;
+  }
+  .section-heading{
+    margin-bottom: 40px;
+  }
+  .page-numbers{
+    margin-top: -20px;
   }
 </style>

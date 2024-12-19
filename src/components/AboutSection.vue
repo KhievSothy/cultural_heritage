@@ -1,10 +1,10 @@
 <template>
-  <main class="container" style="margin-top: 150px">
+  <main class="container" style="margin-top: 100px">
     <h3 class="text-center">{{ $t("about") }}</h3>
     <hr />
     <div
       id="about_container"
-      class="d-flex gap-5 mt-5"
+      class="d-flex gap-5 mt-4"
       style="justify-content: space-between"
     >
       <div class="cities-town">
@@ -34,6 +34,9 @@
 </template>
 
 <style scoped>
+.container{
+  margin-bottom: -30px;
+}
 p {
   color: black;
   text-indent: 50px;
