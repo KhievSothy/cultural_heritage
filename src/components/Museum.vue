@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+          <h4>{{ $t("discover_museum") }}</h4>
           <h2>{{ $t("museum") }}</h2>
         </div>
       </div>
@@ -223,4 +224,5 @@ transform: scale(1.2);
 background: rgba(49, 22, 122, 0.5);
 box-shadow: 0px 0 25px rgba(0, 0, 0, 0.5);
 }
+
 </style>

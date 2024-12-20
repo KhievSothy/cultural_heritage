@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+          <h4>{{ $t("discover_art") }}</h4>
           <h2>{{ $t("Arts") }}</h2>
         </div>
       </div>
@@ -85,7 +86,7 @@
       </div>
       <div class="details">
         <a href="#" class="stretched-link">
-          <h3 class ="h1">សូនរូប</h3>
+          <h3 class ="h1">{{ $t("Faculty_Title") }}</h3>
         </a>
       </div>
     </div>
@@ -98,7 +99,7 @@
       </div>
       <div class="details">
         <a href="#" class="stretched-link">
-          <h3 class ="h1">សៀក</h3>
+          <h3 class ="h1">{{ $t("Magical_Title") }}</h3>
         </a>
         <a href="#" class="stretched-link"></a>
       </div>

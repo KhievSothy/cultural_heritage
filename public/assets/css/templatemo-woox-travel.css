@@ -1976,7 +1976,7 @@ Deals Page Style
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 260px 0px 190px 0px;
+  padding: 260px 0px 300px 0px;
   text-align: center;
 }
 
@@ -1986,7 +1986,12 @@ Deals Page Style
   color: #fff;
   margin-bottom: 20px;
 }
-
+.M-heading h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 20px;
+}
 .page-heading h2 {
   font-size: 50px;
   font-weight: 700;

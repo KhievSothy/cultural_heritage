@@ -123,8 +123,8 @@
         </div>
       </div>
     </div>
-
-    <div class="col-lg-12">
+  </div>
+  <div class="col-lg-12">
         <ul class="page-numbers">
           <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
           <li><a href="#">1</a></li>
@@ -134,7 +134,6 @@
         </ul>
     </div>
   </div>
-</div>
 </div>
 </template>
 <script>
@@ -257,7 +256,7 @@ export default {
   .section-heading{
     margin-bottom: 40px;
   }
-  .page-numbers{
+  /* .page-numbers{
     margin-top: -20px;
-  }
+  } */
 </style>

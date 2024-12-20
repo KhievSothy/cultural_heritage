@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+          <h4>{{ $t("discover_events") }}</h4>
           <h2>{{ $t("event") }}</h2>
         </div>
       </div>

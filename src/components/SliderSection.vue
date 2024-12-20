@@ -10,32 +10,32 @@
         <div id="top-banner-1" class="banner">
           <div class="banner-inner-wrapper header-text">
             <div class="main-caption">
-              <h2>Welcome to the land of culture!</h2>
-              <h1>Angkor Wat the most ancient Architecture</h1>
+              <h2>{{ $t("Culture_Land") }}</h2>
+              <h1>{{ $t("Angkor_Wat") }}</h1>
             </div>
           </div>
         </div>
         <div id="top-banner-2" class="banner">
           <div class="banner-inner-wrapper header-text">
             <div class="main-caption">
-              <h2>Welcome to the land of culture!</h2>
-              <h1>Traditional Arts and Crafts</h1>
+              <h2>{{ $t("Culture_Land") }}</h2>
+              <h1>{{ $t("Art_Caft") }}</h1>
             </div>
           </div>
         </div>
         <div id="top-banner-3" class="banner">
           <div class="banner-inner-wrapper header-text">
             <div class="main-caption">
-              <h2>Welcome to the land of culture!</h2>
-              <h1>Classical Dance</h1>
+              <h2>{{ $t("Culture_Land") }}</h2>
+              <h1>{{ $t("Classical_Dance") }}</h1>
             </div>
           </div>
         </div>
         <div id="top-banner-4" class="banner">
           <div class="banner-inner-wrapper header-text">
             <div class="main-caption">
-              <h2>Welcome to the land of culture!</h2>
-              <h1>Museums</h1>
+              <h2>{{ $t("Culture_Land") }}</h2>
+              <h1>{{ $t("museum") }}</h1>
             </div>
           </div>
         </div>

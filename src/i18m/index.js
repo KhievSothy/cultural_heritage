@@ -5,6 +5,9 @@ const messages = {
     home: "Home",
     historical: "Historical Sites",
     discover_historical: "Discover Our Historical Destination",
+    discover_museum: "Discover Our Museum Destination",
+    discover_events: "Discover Our Events Destination",
+    discover_art: "Discover Our Arts Destination",
     museum: "Museum",
     event: "Events",
     arts: "Arts",
@@ -55,6 +58,8 @@ const messages = {
     Theater_Title: "Theater",
     Detail_Th:
       "Cambodian theater has a rich and diverse history, deeply rooted in the culture and traditions of the Khmer people. It includes several key forms, such as classical, folk, and modern theatre, often intertwined with dance and music. A notable feature of Cambodian theater is its fusion with traditional dance, where performances are not just acted but also danced, giving rise to genres like dance dramas. Traditional Forms: 1. Lakhaon Khaol – This is a classical male-masked theater, one of Cambodia’s oldest theatrical traditions, believed to date back to the Angkor period. It is often accompanied by the pin peat orchestra, a traditional ensemble, and focuses on dramatic storytelling 2. Lakhaon Poul Srei – This is the female version of Lakhaon Khaol. The performances involve dancers who also narrate parts of the story, a contrast to the male version where separate narrators are used. This form highlights the interaction between music, dance, and narration 3. Sbek Thom (Khmer Shadow Theatre) – A mesmerizing form of shadow puppetry, where large leather puppets are projected onto a screen to tell stories from the Ramayana and other local myths. The puppets can be up to two meters tall, and their movements are accompanied by chanting and music Modern Influences: In recent years, there has been a resurgence in modern Cambodian theater, where traditional themes are often combined with contemporary issues, attracting both local and international audiences. Festivals continue to feature traditional performances alongside modern adaptations, ensuring that these unique forms remain a vital part of Cambodian culture These traditions not only entertain but also serve as vital cultural rituals, preserving the myths, legends, and religious practices of Cambodia.",
+    Faculty_Title:"Faculty",
+    Magical_Title:"Magical",
     Water_Festival_Title: "Water Festival",
     Water_Detail:
       "The Royal Water Festival, also known as Bon Om Touk, along with the Illuminated Float Procession, Moon Praying Ceremony, and Ambok Eating, was celebrated for three days from November 14 to November 16, 2024. The festival concluded with joyful and memorable moments. This celebration continues the royal tradition of Cambodia's valuable culture, honoring the ancestors who protected the country's integrity and recognizing the Tonle Sap River's essential role in agriculture for Cambodian farmers. By consistently celebrating these events, the aim is to preserve the Khmer cultural heritage while providing happiness and joy to the Cambodian people during the relaxation period after the rice harvesting season. Additionally, it boosts the economy by encouraging spending and attracting foreign tourists to visit Cambodia.",
@@ -69,11 +74,18 @@ const messages = {
       "The Angkor Sangkran event was organized over three days, from April 14 to 16, 2023, to celebrate the Khmer New Year and commemorate the 10th anniversary of Angkor Sangkran. This event serves as a reminder of the vibrant intangible cultural heritage of Cambodia, held at the location of the world heritage site. Cultural Preservation and Development: The event contributes to the preservation and development of national culture, enhancing national prestige on the international stage. It provides an opportunity for youth, citizens, and both local and international tourists to learn more about the richness, fame, and diversity of Khmer culture, civilization, traditions, and religion. Inspiring National Pride:Angkor Sangkran fosters a sense of pride, especially among Cambodian youth, in their cultural heritage. It encourages the younger generation to cherish, preserve, and promote their cultural identity and heritage. Unity and Solidarity:The event promotes unity and solidarity among the Cambodian people, fostering a sense of national identity and family. It also nurtures the spirit of cultural preservation and development, national values, and the soul and identity of the Khmer people.",
     SeaF_Titla: "Sea Festival",
     Marathon: "Marathon",
+    Culture_Land:"Welcome to the land of culture!",
+    Angkor_Wat:"Angkor Wat the most ancient Architecture",
+    Classical_Dance:"Classical Dance",
+    Art_Caft:"Traditional Arts and Crafts",
   },
   khm: {
     home: "ទំព័រដើម",
     historical: "ទីតាំងប្រវត្តិសាស្ត្រ",
     discover_historical: "ស្វែងយល់ពីគោលដៅប្រវត្តិសាស្ត្ររបស់យើង",
+    discover_museum: "ស្វែងយល់ពីគោលដៅសារមន្ទីររបស់យើង",
+    discover_events: "ស្វែងយល់ពីគោលដៅសារព្រឹត្តិការណ៍វប្បធម៌របស់យើង",
+    discover_art: "ស្វែងយល់ពីគោលដៅសិល្បៈរបស់យើង",
     museum: "សារមន្ទីរ",
     event: "ព្រឹត្តិការណ៍វប្បធម៌",
     arts: "សិល្បៈ",
@@ -125,6 +137,8 @@ const messages = {
     Theater_Title: "ល្ខោន",
     Detail_Th:
       "ល្ខោនខ្មែរមានប្រវត្តិសាស្ត្រដ៏សម្បូរបែបនិងចម្រុះដែលជារឿយៗកាន់កាប់នូវវប្បធម៌និងប្រពៃណីរបស់ប្រជាជនខ្មែរ។ វារួមបញ្ចូលល្ខោនច្រើនប្រភេទដូចជា ល្ខោនបុរាណ, ល្ខោនប្រជាប្រិយ, និងល្ខោនសម័យទំនើប ដែលសំឡឹងរួមបញ្ចូលជាមួយនឹងការរាំនិងតន្ត្រីផងដែរ។ លក្ខណៈពិសេសមួយនៃល្ខោនខ្មែរគឺការបញ្ចូលជាមួយនឹងការរាំ ប្រពៃណី ដែលការសម្តែងមិនត្រឹមតែមានតួអង្គសម្តែងប៉ុណ្ណោះទេ តែមានការរាំផងដែរ ធ្វើអោយមានប្រភេទល្ខោនដូចជា ល្ខោនទ្រនំ។ រៀបល្ខោនប្រពៃណី ល្ខោនខោល – ឡើងជាល្ខោនប្រដាប់មុខបុរស ដែលជាបុព្វសាសនាបុរាណបំផុតមួយរបស់ប្រទេសកម្ពុជា សន្សិតអោយមានតាំងពីសម័យអង្គរ។ វាត្រូវបានគេច្រើនជាមួយនឹងក្រុមតន្រ្តីភីណិពាត ដែលជាក្រុមឧបករណ៍តន្ត្រីប្រពៃណី ហើយកាន់កាប់ការសារស្រោមទ្រឹស្តីនិងរឿងនិទាន។ ល្ខោនពោលស្រី – ជាបុព្វសាសនាប្រពៃណីរបស់ល្ខោនខោលបុរស។ ការសម្តែងមានតួសម្តែងដែលច្រៀងរឿងផងដែរ ជាប្រសេទួចប់ឯករស្រាល មានតួនាទីសម្តែងឆ្លៀតនិងការសារតួនាទីល្ខោននាថា។ រៀបល្ខោននេះជាភាពរបាយនិងការបង្អួតកំម្រស់នៃតន្ត្រី ការរាំ, និងការផ្ដល់តួអង្គ។ស្បែកធំ (ល្ខោនសម្លេងរំដោះ) – ជាប្រភេទនៃល្ខោនខិតភ្នែកដែលភាគរបស់នារីនាំតាមតួស្បែកធំធ្វើពីស្បែកក្រាស់ដែលកាប់ឱ្យមានទំហ៊ូលដល់ពីរាមានិយាយថា។ តួស្បែកធំនេះអាចមានកំពស់រហូតដល់ពីរាមានិយាយថា មួយឆ្កាងនិងការរំលេកដោយតន្ត្រីហើយការច្រៀង។",
+    Faculty_Title:"សូនរូប",
+    Magical_Title:"សៀក",
     Water_Festival_Title: "ព្រះរាជពិធីបុណ្យអុំទូក",
     Water_Detail:
       "ព្រះរាជពិធីបុណ្យអុំទូក បណ្តែតប្រទីប និងសំពះព្រខែ អកអំបុក ដែលបានប្រារព្ធ​ធ្វើ​ឡើង​​រយៈ​ពេល៣ថ្ងៃ ចាប់ពីថ្ងៃ១៤ ដល់ថ្ងៃទី១៦ ខែវិច្ឆិកា ឆ្នាំ២០២៤ ត្រូវបានបិទបញ្ចប់ទៅដោយ​បន្សល់​​​នូវ​អនុស្សាវរីយ៍ដ៏សែនសប្បាយរីករាយ។ ការប្រារព្ធព្រះរាជពិធីបុណ្យអុំទូក បណ្តែតប្រទីព និងសំពះព្រះខែ អកអំបុក គឺជាការបន្តនូវព្រះរាជ​បវេណីនៃវប្បធម៌ដ៏ថ្លៃថ្លារបស់ខ្មែរក្នុងការរលឹកដល់គុណបុណ្យបុព្វបុរសខ្មែរក្នុងការពារបូរណភាពទឹកដី ក៏ដូចជានឹករលឹកដល់គុណព្រះគង្គារដែលជាប្រភពទ្រទ្រង់សំខាន់ដល់វិស័យ​កសិកម្មការ​ធ្វើ​ស្រែ​​ចម្ការ​​របស់ប្រជាកសិករខ្មែរ។ ការបន្តប្រារព្ធយ៉ាងខ្ជាប់ខ្ជួននូវព្រះរាជពិធីបុណ្យអុំទូក បណ្តែត​ប្រទីប និងសំពះ​ព្រះ​ខែ អកអំបុក ជាកិច្ចប្រឹងប្រែងថែរក្សានូវមរតកវប្បធម៌ខ្មែរឱ្យគង់វង្ស ហើយក៏​ជា​ផ្តល់​នូវ​ភាព​​សប្បាយ​រីករាយជូនប្រជាពលរដ្ឋខ្មែរក្នុងរដូវរំហើយក្រោយពេលច្រូតកាត់​ប្រមូល​ផល​ស្រូវ បន្ទាប់ពី​នឿយ​ហត់ពេញមួយរដូវវស្សា។ បន្ថែមពីលើនោះ ក៏ជួយដល់ចរន្តសេដ្ឋកិច្ចធ្វើឱ្យ​លំហូរ​​​សាច់​ប្រាក់​តាម​រយៈការចាយវាយរបស់ប្រជាពលរដ្ឋ និងការប្រមូលកៀរគរអ្នកទេសចរ​បរទេស​ឱ្យ​ចូលមក​លេង​ក្នុង​ប្រទេសកម្ពុជា។",
@@ -139,6 +153,10 @@ const messages = {
       "ព្រឹត្តិការណ៍អង្គរសង្ក្រាន្តរៀបចំរយៈពេល៣ថ្ងៃ នៅថ្ងៃទី១៤ ១៥ និង១៦ ខែមេសា ឆ្នាំ២០២៣ ដើម្បីអបអរសាទរពិធីបុណ្យចូលឆ្នាំប្រពៃណីជាតិខ្មែរ ក៏ដូចជាប្រារព្ធខួប១០ឆ្នាំ នៃព្រឹត្តិការណ៍អង្គរសង្ក្រាន្ត ដែលជាការរំលឹកដល់ភាពរស់រវើក នៃមរតកបេតិកភណ្ឌអរូបីដ៏ផូរផង់ របស់ខ្មែរ នៅលើទីតាំងនៃមរតកបេតិកភណ្ឌរូបីនៃពិភពលោក។ ព្រឹត្តិការណ៍អង្គរសង្ក្រាន្តបានចូលរួមអភិរក្ស និង អភិវឌ្ឍវប្បធម៌ជាតិ លើកស្ទួយកិត្យានុភាពជាតិលើឆាកអន្តរជាតិ រួមទាំង បានផ្ដល់ឱកាសឲ្យយុវជន ប្រជាជន ភ្ញៀវទេសចរជាតិ និងអន្តរជាតិបានឈ្វេងយល់បន្ថែមអំពីភាពរុងរឿង ល្បីល្បាញ ភាពសម្បូរបែបនៃវប្បធម៌ អរិយធម៌ ទំនៀមទម្លាប់ ប្រពៃណី និងសាសនាជាដើម។ ព្រឹត្តិការណ៍អង្គរសង្ក្រាន្ត បានចូលរួមបំផុសគំនិតស្មារតី ប្រជាជនកម្ពុជា ជាពិសេសយុវជន កុលបុត្រ កុលធីតាខ្មែរជំនាន់ក្រោយឱ្យមានមោទកភាព ស្រឡាញ់វប្បធម៌ អរិយធម៌ ប្រពៃ និងទំនៀមទម្លាប់ដែលជាអត្តសញ្ញាណជាតិ និងបន្តថែរក្សាកេរមរតកនេះឱ្យបានគង់វង្ស ក៏ដូចជាបំផុសគំនិតរួបរួមកម្លាំងសាមគ្គីជាធ្លុងមួយ និងជាគ្រួសារខ្មែរតែមួយ ព្រមទាំងបណ្តុះស្មារតីអភិរក្ស និង អភិវឌ្ឍវប្បធម៌ បាវចនាជាតិ ដួងព្រលឹង និងអត្តសញ្ញាណជាតិខ្មែរ។ប្រធានបទសម្រាប់ ព្រឹត្តិការណ៍អង្គរសង្ក្រាន្តនាឆ្នាំនេះគឺ «ក្ដីស្រមៃ និងក្ដីសង្ឃឹម» ដែលមានន័យថា ការផ្សារភ្ជាប់នូវក្តីស្រមៃ ជាមួយក្តីសង្ឃឹម ប្រកបដោយភាពជឿជាក់របស់ប្រជាពលរដ្ឋខ្មែរគ្រប់ៗរូបក្នុងដំណើរឆ្ពោះទៅកាន់ភាពសុខក្សេមក្សាន្ត មោទកភាពជាតិ ភាពរុងរឿង និងភាពរីកចម្រើន វិបុលភាព និងភាពធន់នៃប្រជាជាតិកម្ពុជា ជាមួយ អរិយធម៌ដែលខ្ពស់ខ្ពស់ឆើតឆាយ។",
     SeaF_Titla: "ពិធីបុណ្យសមុទ្រ",
     Marathon: "កីឡារត់ប្រណាំង",
+    Culture_Land:"សូមស្វាគមន៍មកកាន់ទឹកដីវប្បធម៌!",
+    Angkor_Wat:"អង្គរវត្តគឺជាស្ថាបត្យកម្មបុរាណដែលមានតម្លៃខ្ពស់បំផុត",
+    Classical_Dance:"របាំប្រពៃណី",
+    Art_Caft:"សិល្បៈ និងសិប្បកម្មប្រពៃណី",
   },
 };
 
