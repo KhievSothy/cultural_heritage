@@ -59,6 +59,8 @@
 </template>
 
 <script>
+import { AuthService } from "@/services/auth.service";
+
 export default {
   data() {
     return {
@@ -67,13 +69,20 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      if (this.email !== "admin@example.com" && this.password !== "123") {
-        this.$toast.error("Incorrect Username Or Password!");
-        return;
+    async handleSubmit() {
+      try {
+        await AuthService.login(this.email, this.password);
+        this.$toast.success("Authenticated!");
+        // window.location.href = "/admin-dashboard";
+        this.$router.push({ path: `admin-dashboard` });
+      } catch (error) {
+        console.log(error);
+        this.$toast.error("Authenticate Failed!, " + error.response.data);
       }
-      this.$router.push({ path: `admin-dashboard` });
     },
+  },
+  mounted() {
+    // localStorage.clear();
   },
 };
 </script>

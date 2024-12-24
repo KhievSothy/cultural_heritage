@@ -142,8 +142,8 @@ export default {
     };
   },
   methods: {
-    toDetail() {
-      this.$router.push("/historical_sites/test");
+    toDetail(id) {
+      this.$router.push("/historical_sites/detail/" + id);
     },
   },
 };

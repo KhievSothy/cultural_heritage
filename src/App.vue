@@ -3,17 +3,20 @@
     <HeaderSection v-if="!hideHeaderAndFooter" />
     <router-view></router-view>
     <FooterSection v-if="!hideHeaderAndFooter" />
+    <LoadingComponent />
   </div>
 </template>
 
 <script>
 import FooterSection from "./components/FooterSection.vue";
 import HeaderSection from "./components/HeaderSection.vue";
+import LoadingComponent from "./components/LoadingComponent.vue";
 
 export default {
   components: {
     HeaderSection,
     FooterSection,
+    LoadingComponent,
   },
   computed: {
     hideHeaderAndFooter() {

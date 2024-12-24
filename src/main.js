@@ -13,7 +13,7 @@ app.use(router);
 app.use(i18n);
 app.use(ToastPlugin, {
   // One of the options
-  position: "top",
+  position: "top-right",
   duration: 2000,
 });
 app.mount("#app");

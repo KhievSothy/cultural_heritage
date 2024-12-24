@@ -29,6 +29,10 @@ import HistoricalSiteAdmin from "@/components/HistoricalSiteAdmin.vue";
 import Dashboard from "@/components/Dashboard.vue";
 import Historical_Site_Detail from "@/components/Historical_Site_Detail.vue";
 
+import { AuthService } from "@/services/auth.service";
+import { useToast } from "vue-toast-notification";
+const $toast = useToast();
+
 const routes = [
   { path: "/", component: Home },
   {
@@ -37,8 +41,8 @@ const routes = [
     component: Historical_Sites,
   },
   {
-    path: "/historical_sites/test",
-    name: "historical_sites_test",
+    path: "/historical_sites/detail",
+    name: "historical_sites_detail",
     component: Historical_Site_Detail,
   },
   { path: "/museum", component: Museum },
@@ -59,11 +63,7 @@ const routes = [
     path: "/admin-dashboard",
     name: "admin-dashboard",
     component: AdminDashboard,
-  },
-  {
-    path: "/admin-dashboard",
-    name: "admin-dashboard",
-    component: AdminDashboard,
+    meta: { requiresAuth: true },
     children: [
       {
         path: "", // This works fine as the default route
@@ -87,6 +87,33 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  // Check if the route requires authentication
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (!AuthService.isAuthenticated()) {
+      // If not authenticated, show error and redirect to login
+      $toast.error("Token Expired or Invalid Token!", {
+        position: "top-right",
+      });
+      AuthService.logout();
+      next("/admin-login");
+    } else {
+      // Proceed to the protected route
+      next();
+    }
+  }
+  // If the user is authenticated and trying to access the login page
+  else if (to.path === "/admin-login" && AuthService.isAuthenticated()) {
+    console.log("Already authenticated, redirecting to the current route.");
+
+    // Redirect to the user's current route or dashboard
+    next("/admin-dashboard");
+  } else {
+    // Allow navigation for public routes
+    next();
+  }
 });
 
 export default router;

@@ -41,8 +41,11 @@
         class="navbar navbar-expand-lg navbar-light bg-light px-4 d-flex justify-content-between"
         style="border-bottom: 1px solid rgba(0, 0, 0, 0.2)"
       >
-        <h4>Welcome Back <span style="color: goldenrod"> Admin</span> !</h4>
-        <div class="user-icon p-2">
+        <h4>
+          Welcome Back
+          <span style="color: goldenrod"> {{ this.fullname }}</span> !
+        </h4>
+        <div class="user-icon p-2" style="cursor: pointer">
           <img
             src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
             alt=""
@@ -58,7 +61,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      fullname: localStorage.getItem("fullname"),
+    };
+  },
+};
 </script>
 
 <style scoped>
