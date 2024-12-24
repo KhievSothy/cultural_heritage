@@ -77,7 +77,7 @@ export default {
         this.$router.push({ path: `admin-dashboard` });
       } catch (error) {
         console.log(error);
-        this.$toast.error("Authenticate Failed!, " + error.response.data);
+        this.$toast.error("Authenticate Failed!");
       }
     },
   },
