@@ -70,6 +70,11 @@ export default {
   },
   methods: {
     async handleSubmit() {
+      if ((this.email === "") | (this.password === "")) {
+        this.$toast.error("Please Input All The Required Fields!");
+        return;
+      }
+
       try {
         await AuthService.login(this.email, this.password);
         this.$toast.success("Authenticated!");
@@ -77,7 +82,7 @@ export default {
         this.$router.push({ path: `admin-dashboard` });
       } catch (error) {
         console.log(error);
-        this.$toast.error("Authenticate Failed!");
+        this.$toast.error(error.response.data || "Authenticate Failed!");
       }
     },
   },

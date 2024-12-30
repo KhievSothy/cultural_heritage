@@ -6,13 +6,15 @@
           <div class="item-MN">
             <div class="col-lg-12">
               <div class="image">
-                <img src="/assets/images/banner-01.jpg" alt="img01" />
+                <img :src="api_url + '/' + item.img" alt="img01" />
               </div>
             </div>
             <div class="col-lg-12 align-self-center">
               <div class="content">
-                <h4>{{ $t("Tuol_Sleng_Title") }}</h4>
-                <p>{{ $t("DetailTS") }}</p>
+                <h4>
+                  {{ current_lang == "en" ? item.title_en : item.title_kh }}
+                </h4>
+                <p>{{ current_lang == "en" ? item.desc_en : item.desc_kh }}</p>
               </div>
             </div>
           </div>
@@ -26,6 +28,41 @@
     </div>
   </div>
 </template>
+
+<script>
+import { HistoricalSiteService } from "@/services/historical_site.service";
+import environment from "@/environments/environment";
+import router from "../routes/index";
+export default {
+  watch: {
+    "$i18n.locale"(newLocale) {
+      this.current_lang = newLocale; // Sync with Vue I18n
+    },
+  },
+  data() {
+    return {
+      item: {},
+      current_lang: this.$i18n.locale,
+      api_url: environment.API_BASE_URL,
+    };
+  },
+  methods: {
+    async GetById(id) {
+      try {
+        this.item = await HistoricalSiteService.GetById(id);
+        //console.log(this.historical_site_data);
+      } catch (error) {
+        //console.log(error);
+        router.push("/not-found");
+      }
+    },
+  },
+  async mounted() {
+    console.log(this.$router);
+    await this.GetById(this.$route.params.id);
+  },
+};
+</script>
 
 <style scoped>
 .amazing-MN .item-MN .image {

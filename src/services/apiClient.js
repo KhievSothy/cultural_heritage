@@ -2,6 +2,7 @@ import axios from "axios";
 import { AuthService } from "./auth.service";
 import router from "../routes/index";
 import { useToast } from "vue-toast-notification";
+import environment from "@/environments/environment";
 const $toast = useToast();
 
 // Track active requests
@@ -27,7 +28,7 @@ const hideLoader = () => {
   }
 };
 
-const baseURL = "http://localhost:3000";
+const baseURL = environment.API_BASE_URL;
 
 const apiClient = axios.create({
   baseURL: baseURL,

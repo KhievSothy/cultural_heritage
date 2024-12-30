@@ -41,7 +41,7 @@ const routes = [
     component: Historical_Sites,
   },
   {
-    path: "/historical_sites/detail",
+    path: "/historical_sites/detail/:id",
     name: "historical_sites_detail",
     component: Historical_Site_Detail,
   },
