@@ -45,7 +45,12 @@
           Welcome Back
           <span style="color: goldenrod"> {{ this.fullname }}</span> !
         </h4>
-        <div class="user-icon p-2" style="cursor: pointer">
+        <div
+          class="user-icon p-2"
+          style="cursor: pointer"
+          data-bs-toggle="modal"
+          data-bs-target="#userModal"
+        >
           <img
             src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
             alt=""
@@ -58,14 +63,94 @@
       </main>
     </div>
   </div>
+
+  <div
+    class="modal fade"
+    id="userModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">User Modal</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="img-container d-flex justify-content-center">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
+              alt=""
+              style="width: 50%"
+            />
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">Current Password</label>
+                <input type="password" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">New Password</label>
+                <input type="password" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">Confirm Password</label>
+                <input type="password" class="form-control" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            @click="LogOut()"
+            type="button"
+            data-bs-dismiss="modal"
+            class="btn btn-warning"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i> Log Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import router from "../routes/index";
 export default {
   data() {
     return {
       fullname: localStorage.getItem("fullname"),
     };
+  },
+  methods: {
+    LogOut() {
+      localStorage.clear();
+      router.push("/admin-login");
+    },
   },
 };
 </script>
