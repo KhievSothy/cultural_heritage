@@ -21,6 +21,7 @@
             <span style="margin-left: 20px">ផ្ទាំងគ្រប់គ្រង</span>
           </router-link>
         </li>
+
         <li class="nav-item">
           <router-link
             class="nav-link text-white py-3 px-4 d-flex align-items-center"
@@ -30,6 +31,18 @@
           >
             <i class="fa-solid fa-gopuram"></i>
             <span style="margin-left: 20px">ទីតាំងប្រវត្តិសាស្ត្រ</span>
+          </router-link>
+        </li>
+        
+        <li class="nav-item">
+          <router-link
+            class="nav-link text-white py-3 px-4 d-flex align-items-center"
+            to="/admin-dashboard/missing-artefact"
+            activeClass="link_active"
+            exact-active-class="link_active"
+          >
+            <i class="fa-solid fa-monument"></i>
+            <span style="margin-left: 20px">វត្ថុបុរាណបាត់</span>
           </router-link>
         </li>
       </ul>

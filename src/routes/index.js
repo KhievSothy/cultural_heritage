@@ -10,6 +10,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/pages/Home.vue";
 import Historical_Sites from "@/pages/Historical_Sites.vue";
 import Museum from "@/pages/Museum.vue";
+import Museum_Detail from "@/components/Museum_Detail.vue";
 import Event from "@/pages/Event.vue";
 import Arts from "@/pages/Arts.vue";
 import About from "@/pages/About.vue";
@@ -28,9 +29,10 @@ import PageNotFound from "@/components/PageNotFound.vue";
 import HistoricalSiteAdmin from "@/components/HistoricalSiteAdmin.vue";
 import Dashboard from "@/components/Dashboard.vue";
 import Historical_Site_Detail from "@/components/Historical_Site_Detail.vue";
-
+import MissingArtefactAdmin from "@/components/MissingArtefactAdmin.vue";
 import { AuthService } from "@/services/auth.service";
 import { useToast } from "vue-toast-notification";
+
 const $toast = useToast();
 
 const routes = [
@@ -45,7 +47,16 @@ const routes = [
     name: "historical_sites_detail",
     component: Historical_Site_Detail,
   },
-  { path: "/museum", component: Museum },
+  { path: "/museum",
+    name: "museum",
+    component: Museum,
+  },
+  {
+    path:"/museum/detail/:id",
+    name:"museum_detail",
+    component: Museum_Detail,
+  },
+
   { path: "/event", component: Event },
   { path: "/arts", component: Arts },
   { path: "/about", component: About },
@@ -74,6 +85,11 @@ const routes = [
         path: "historical-site", // Change this to a relative path
         name: "historical-site",
         component: HistoricalSiteAdmin,
+      },
+      {
+        path: "missing-artefact", // Change this to a relative path
+        name: "missing-artefact",
+        component: MissingArtefactAdmin,
       },
     ],
   },
