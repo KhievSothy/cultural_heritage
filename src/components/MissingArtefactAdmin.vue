@@ -138,7 +138,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -147,8 +147,8 @@
                 <input type="text" v-model="objecttype_kh" class="form-control" />
               </div>
             </div>
-          </div>
-          <div class="row mt-3">
+          </div> -->
+          <!-- <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -157,9 +157,50 @@
                 <input type="text" v-model="objecttype_en" class="form-control" />
               </div>
             </div>
+          </div> -->
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="objectTypeSelect" class="form-label">ប្រភេទវត្ថុបុរាណ</label>
+                <select v-model="objecttype_kh" class="form-control">
+                  <option value="" disabled>Select Object Type</option>
+                  <option value="stone">ថ្ម</option>
+                  <option value="metal">លោហៈ</option>
+                  <option value="wood">ឈើ</option>
+                  <option value="ceramic">សេរ៉ាមិច</option>
+                  <option value="bronze">សំរឹទ្ធិ</option>
+                  <option value="silver">ប្រាក់</option>
+                  <option value="gold">មាស</option>
+                  <option value="lacquer">ខ្មុកស្មាច់</option>
+                  <option value="Unknown period">មិនអាចកំណត់អត្តសញ្ញាណ</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
           </div>
 
-          <div class="row">
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="objectTypeSelect" class="form-label">Object type</label>
+                <select v-model="objecttype_en" class="form-control">
+                  <option value="" disabled>Select Object Type</option>
+                  <option value="stone">stone</option>
+                  <option value="metal">metal</option>
+                  <option value="wood">wood</option>
+                  <option value="ceramic">ceramic</option>
+                  <option value="bronze">bronze</option>
+                  <option value="silver">silver</option>
+                  <option value="gold">gold</option>
+                  <option value="lacquer">lacquer</option>
+                  <option value="Unknown period">Unknown Type</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -168,8 +209,8 @@
                 <input type="text" v-model="period_kh" class="form-control" />
               </div>
             </div>
-          </div>
-          <div class="row mt-3">
+          </div> -->
+          <!-- <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -178,9 +219,45 @@
                 <input type="text" v-model="period_en" class="form-control" />
               </div>
             </div>
+          </div> -->
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="periodSelect" class="form-label">សម័យកាល</label>
+                <select v-model="period_kh" class="form-control">
+                  <option value="" disabled>Select Period</option>
+                  <option value="Prehistoric period">សម័យបុរេប្រវត្តិ</option>
+                  <option value="Pre-Angkor period">សម័យមុនអង្គរ</option>
+                  <option value="Angkor period">សម័យអង្គរ</option>
+                  <option value="Post-Angkor period">សម័យក្រោយអង្គ</option>
+                  <option value="Middle period">សម័យកណ្តាល</option>
+                  <option value="Modern period">សម័យទំនើប</option>
+                  <option value="Unknown period">មិនអាចកំណត់អត្តសញ្ញាណ</option>
+                </select>
+              </div>
+            </div>
           </div>
 
-          <div class="row">
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="periodSelect" class="form-label">Period</label>
+                <select v-model="period_en" class="form-control">
+                  <option value="" disabled>Select Period</option>
+                  <option value="Prehistoric period">Prehistoric period</option>
+                  <option value="Pre-Angkor period">Pre-Angkor period</option>
+                  <option value="Angkor period">Angkor period</option>
+                  <option value="Post-Angkor period">Post-Angkor period</option>
+                  <option value="Middle period">Middle period</option>
+                  <option value="Modern period">Modern period</option>
+                  <option value="Unknown period">Unknown period</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -189,8 +266,8 @@
                 <input type="text" v-model="style_kh" class="form-control" />
               </div>
             </div>
-          </div>
-          <div class="row mt-3">
+          </div> -->
+          <!-- <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -199,7 +276,60 @@
                 <input type="text" v-model="style_en" class="form-control" />
               </div>
             </div>
+          </div> -->
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="styleSelect" class="form-label">រចនាបថ</label>
+                <select v-model="style_kh" class="form-control">
+                  <option value="" disabled>Select Style</option>
+                  <option value="Phnom Da">ភ្នំដា</option>
+                  <option value="Sambor Prei Kuk">សំបូរព្រៃគុក</option>
+                  <option value="Prei Khmeng">ព្រៃក្មេង</option>
+                  <option value="Kampong Preah">កំពង់ព្រះ</option>
+                  <option value="Kulen">គូលែន</option>
+                  <option value="Preah Ko">ព្រះគោ</option>
+                  <option value="Bakheng">បាខែង</option>
+                  <option value="Koh Ker">កោះកេរ</option>
+                  <option value="Pre Rup">ប្រែរូប</option>
+                  <option value="Banteay Srei">បន្ទាយស្រី</option>
+                  <option value="Khleang">ឃ្លាំង</option>
+                  <option value="Baphuon">បាពួន</option>
+                  <option value="Angkor Wat">អង្គរវត្ត</option>
+                  <option value="Bayon">បាយន្ត</option>
+                  <option value="Unknown period">មិនអាចកំណត់អត្តសញ្ញាណ</option>
+                </select>
+              </div>
+            </div>
           </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="styleSelect" class="form-label">Style</label>
+                <select v-model="style_en" class="form-control">
+                  <option value="" disabled>Select Style</option>
+                  <option value="Phnom Da">Phnom Da</option>
+                  <option value="Sambor Prei Kuk">Sambor Prei Kuk</option>
+                  <option value="Prei Khmeng">Prei Khmeng</option>
+                  <option value="Kampong Preah">Kampong Preah</option>
+                  <option value="Kulen">Kulen</option>
+                  <option value="Preah Ko">Preah Ko</option>
+                  <option value="Bakheng">Bakheng</option>
+                  <option value="Koh Ker">Koh Ker</option>
+                  <option value="Pre Rup">Pre Rup</option>
+                  <option value="Banteay Srei">Banteay Srei</option>
+                  <option value="Khleang">Khleang</option>
+                  <option value="Baphuon">Baphuon</option>
+                  <option value="Angkor Wat">Angkor Wat</option>
+                  <option value="Bayon">Bayon</option>
+                  <option value="Unknown period">Unknon Style</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
 
           <div class="row">
             <div class="col-md-12">
