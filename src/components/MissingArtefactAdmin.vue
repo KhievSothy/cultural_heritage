@@ -14,8 +14,11 @@
     <thead>
       <tr>
         <th scope="col">លេខរៀង</th>
+        <th scope="col">លេខរបាយការណ៍</th>
         <th scope="col">ចំណងជើងភាសាខ្មែរ</th>
-        <th scope="col">ចំណងជើងភាសាអង់គ្លេស</th>
+        <th scope="col">វត្ថុធាតុ</th>
+        <th scope="col">សម័យកាល</th>
+        <th scope="col">រចនាបថ</th>
         <th class="text-center" scope="col">បើកដំណើរការ</th>
         <th scope="col">Action</th>
       </tr>
@@ -23,8 +26,11 @@
     <tbody>
       <tr v-for="(item, index) in missing_artefact_data" :key="item.id">
         <th scope="row">{{ index + 1 }}</th>
+        <td>{{ item.report_no }}</td>
         <td>{{ item.title_kh }}</td>
-        <td>{{ item.title_en }}</td>
+        <td>{{ item.objecttype_kh }}</td>
+        <td>{{ item.period_kh }}</td>
+        <td>{{ item.style_kh }}</td>
         <td class="text-center">
           <h6>
             <span v-if="item.is_enable" class="badge text-bg-success">បើក</span>
