@@ -10,7 +10,7 @@
     <i class="fa-solid fa-plus"></i> បង្កើតថ្មី
   </button>
   <hr />
-  <div style="max-height: 700px; overflow-y: auto; overflow-x: auto;">
+  <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
   <table class="table">
     <thead>
       <tr>
