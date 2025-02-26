@@ -10,6 +10,7 @@
     <i class="fa-solid fa-plus"></i> បង្កើតថ្មី
   </button>
   <hr />
+  <div style="max-height: 700px; overflow-y: auto; overflow-x: auto;">
   <table class="table">
     <thead>
       <tr>
@@ -59,6 +60,7 @@
       </tr>
     </tbody>
   </table>
+</div>
 
   <!-- Modal -->
 
@@ -144,26 +146,7 @@
             </div>
           </div>
 
-          <!-- <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >ប្រភេទវត្ថុបុរាណ</label
-                >
-                <input type="text" v-model="objecttype_kh" class="form-control" />
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="row mt-3">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Object type</label
-                >
-                <input type="text" v-model="objecttype_en" class="form-control" />
-              </div>
-            </div>
-          </div> -->
+
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
@@ -179,7 +162,7 @@
                   <option value="gold">មាស</option>
                   <option value="lacquer">ខ្មុកស្មាច់</option>
                   <option value="Unknown period">មិនអាចកំណត់អត្តសញ្ញាណ</option>
-                  <!-- Add more options as needed -->
+                  
                 </select>
               </div>
             </div>
@@ -206,26 +189,6 @@
             </div>
           </div>
 
-          <!-- <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >សម័យកាល</label
-                >
-                <input type="text" v-model="period_kh" class="form-control" />
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="row mt-3">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Period</label
-                >
-                <input type="text" v-model="period_en" class="form-control" />
-              </div>
-            </div>
-          </div> -->
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
@@ -244,7 +207,6 @@
             </div>
           </div>
 
-
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
@@ -262,27 +224,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >រចនាបថ</label
-                >
-                <input type="text" v-model="style_kh" class="form-control" />
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="row mt-3">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Style</label
-                >
-                <input type="text" v-model="style_en" class="form-control" />
-              </div>
-            </div>
-          </div> -->
 
           <div class="row mt-3">
             <div class="col-md-12">
