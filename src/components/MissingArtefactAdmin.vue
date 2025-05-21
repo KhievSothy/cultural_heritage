@@ -10,23 +10,28 @@
     <i class="fa-solid fa-plus"></i> បង្កើតថ្មី
   </button>
   <hr />
+  <input type="text" class="form-control" placeholder="ស្វែងរកវត្ថុបុរាណបាត់" v-model="searchQuery"/>
   <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
   <table class="table">
     <thead>
       <tr>
         <th scope="col">លេខរៀង</th>
-        <th scope="col">លេខរបាយការណ៍</th>
+        <th scope="col">រូបភាព</th>
+        <th scope="col">លេខ</th>
         <th scope="col">ចំណងជើងភាសាខ្មែរ</th>
         <th scope="col">វត្ថុធាតុ</th>
         <th scope="col">សម័យកាល</th>
         <th scope="col">រចនាបថ</th>
         <th class="text-center" scope="col">បើកដំណើរការ</th>
         <th scope="col">Action</th>
+        <!-- <th scope="col">Status</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, index) in missing_artefact_data" :key="item.id">
+      <tr v-for="(item, index) in filteredArtefacts" :key="item.id">
         <th scope="row">{{ index + 1 }}</th>
+        <td><img :src="api_url + '/' + item.img" alt="រូបភាព" style="width: 60px;" />
+        </td>
         <td>{{ item.report_no }}</td>
         <td>{{ item.title_kh }}</td>
         <td>{{ item.objecttype_kh }}</td>
@@ -45,15 +50,13 @@
             class="btn btn-warning btn-sm"
             data-bs-toggle="modal"
             data-bs-target="#maModal"
-            v-on:click="Edit(item._id)"
-          >
+            v-on:click="Edit(item._id)">
             កែប្រែ
           </button>
           <button
             class="btn btn-danger btn-sm"
             v-on:click="Delete(item._id)"
-            style="margin-left: 5px"
-          >
+            style="margin-left: 5px">
             លុប
           </button>
         </td>
@@ -461,8 +464,10 @@ export default {
   },
   data() {
     return {
+      searchQuery: "",
       missing_artefact_data: [],
       current_lang: this.$i18n.locale,
+      api_url: environment.API_BASE_URL,
       isEditing: false, // To track if we are editing an existing item
       missingArtefactId: null, // To store the ID of the item being edited
       title_kh: "", // To bind the title in Khmer
@@ -489,6 +494,18 @@ export default {
       image: null,
       imagePreview: null,
     };
+  },
+  computed: {
+    filteredArtefacts() {
+    const q = this.searchQuery.toLowerCase();
+    return this.missing_artefact_data.filter(item =>
+      item.report_no?.toLowerCase().includes(q) ||
+      item.title_kh?.toLowerCase().includes(q) ||
+      item.objecttype_kh?.toLowerCase().includes(q) ||
+      item.period_kh?.toLowerCase().includes(q) ||
+      item.style_kh?.toLowerCase().includes(q)
+    );
+  }
   },
   methods: {
     async downloadImage(imageUrl) {
