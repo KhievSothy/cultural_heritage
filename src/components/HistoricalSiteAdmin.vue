@@ -1,5 +1,5 @@
 <template>
-  <h2>ទីតាំងប្រវត្តិសាស្ត្រ</h2>
+  <h2>ទីតាំងស្ថានីយប្រវត្តិសាស្ត្រ</h2>
   <button
     class="btn btn-primary mt-3"
     data-bs-toggle="modal"
@@ -13,9 +13,10 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">លេខរៀង</th>
-        <th scope="col">ចំណងជើងជាភាសាខ្មែរ</th>
-        <th scope="col">ចំណងជើងជាភាសាអង់គ្លេស</th>
+        <th scope="col">No</th>
+        <th scope="col">លេខចុះបញ្ជី</th>
+        <th scope="col">ឈ្មោះ(Khmer)</th>
+        <th scope="col">ឈ្មោះ(English)</th>
         <th class="text-center" scope="col">បើកដំណើរការ</th>
         <th scope="col">Action</th>
       </tr>
@@ -23,6 +24,7 @@
     <tbody>
       <tr v-for="(item, index) in historical_site_data" :key="item.id">
         <th scope="row">{{ index + 1 }}</th>
+        <td>{{ item.site_number }}</td>
         <td>{{ item.title_kh }}</td>
         <td>{{ item.title_en }}</td>
         <td class="text-center">
@@ -70,7 +72,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="hsLabel">
-            {{ isEditing ? "កែប្រែ" : "បង្កើត" }} ទីតាំងប្រវត្តិសាស្ត្រ
+            {{ isEditing ? "កែប្រែ" : "បង្កើត" }} ទីតាំងស្ថានីយប្រវត្តិសាស្ត្រ
           </h1>
           <button
             type="button"
@@ -83,45 +85,24 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-12">
-              <img
-                v-if="imagePreview"
-                :src="imagePreview"
-                class="rounded img-fluid mb-3"
-                alt="Preview"
-              />
+              <img v-if="imagePreview" :src="imagePreview" class="rounded img-fluid mb-3" alt="Preview" />
             </div>
           </div>
           <div class="row">
             <div class="col-md-10">
               <div class="input-group mb-3">
-                <input
-                  id="input_file"
-                  type="file"
-                  accept="image/*"
-                  @change="handleFileUpload"
-                  class="form-control"
-                />
-                <label class="input-group-text" for="inputGroupFile02"
-                  >បង្ហោះរូបភាពផ្ទាំងខាងក្រោយ</label
-                >
+                <input id="input_file" type="file" accept="image/*" @change="handleFileUpload" class="form-control"/>
+                <label class="input-group-text" for="inputGroupFile02">បញ្ចូលរូបភាព</label>
               </div>
             </div>
             <div class="col-md-2">
-              <button
-                @click="ClearImage()"
-                class="btn btn-danger"
-                v-bind:disabled="!image"
-              >
-                លុបរូប
-              </button>
+              <button @click="ClearImage()" class="btn btn-danger" v-bind:disabled="!image"> លុបរូប </button>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >ចំណងជើងជាភាសាខ្មែរ</label
-                >
+                <label for="exampleFormControlInput1" class="form-label">ឈ្មោះ(Khmer)</label>
                 <input type="text" v-model="title_kh" class="form-control" />
               </div>
             </div>
@@ -129,9 +110,7 @@
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >ចំណងជើងជាភាសាអង់គ្លេស</label
-                >
+                <label for="exampleFormControlInput1" class="form-label">ឈ្មោះ(Egnlish)</label>
                 <input type="text" v-model="title_en" class="form-control" />
               </div>
             </div>
@@ -139,7 +118,141 @@
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
-                <label class="form-label">ការពិពណ៌នាជាភាសាខ្មែរ</label>
+                <label for="exampleFormControlInput1" class="form-label">លេខសម្គាល់ទីតាំង</label>
+                <input type="text" v-model="site_number" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">IK Number</label>
+                <input type="text" v-model="ik_number" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="objectTypeSelect" class="form-label">ប្រភេទស្ថានីយ</label>
+                <select v-model="category_site_kh" class="form-control">
+                  <option value="" disabled>Select Object Type</option>
+                  <option value="temple">ប្រាសាទបុរាណ</option>
+                  <option value="cat_hill">ទួលបុរាណ</option>
+                  <option value="cat_irrigation_system">ប្រព័ន្ធធារាសាស្ត្របុរាណ</option>
+                  <option value="cat_Transportation">គមនាគមន៍បុរាណ</option>
+                  <option value="cat_industrial_station">ស្ថានីយឧស្សាហកម្មបុរាណ</option>
+                  <option value="cat_muol_village">ភូមិមូលបុរាណ</option>
+                  <option value="cat_mining_site">ការដ្ឋានយករ៉ែបុរាណ</option>
+                  <option value="cat_ancient_perung">ពើងបុរាណ</option>
+                  <option value="cat_ancient_cave">ល្អាងឬរូងភ្នំបុរាណ</option>
+                  <option value="cat_underwater_heritage">បេតិកភណ្ឌក្រោមទឹក</option>
+                  <option value="Unknown_cat_site">មិនទាន់កំណត់</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="objectTypeSelect" class="form-label">ស្ថានីយ</label>
+                <select v-model="type_of_site_kh" class="form-control">
+                  <option value="" disabled>Select Object Type</option>
+                  <option value="type_1_1">ប្រាសាទមានរូបរាង</option>
+                  <option value="type_1_2">ប្រាសាទបាក់បែក ឬគ្រឹះប្រាសាទ</option>
+                  <option value="type_2_1">ទួលកប់សព</option>
+                  <option value="type_2_2">ទួលអ្នកតា (ទីសក្ការបូជា)</option>
+                  <option value="type_2_3">ទួលមនុស្សរស់នៅ(មានសំណល់របស់ប្រើប្រាស់របស់មនុស្សសម័យបុរាណ)</option>
+                  <option value="type_2_4">ទួលមានសំណង់បុរាណពីលើ(ផ្ទះ វត្ត ព្រះវិហារ កុដិ ចេតិយ...)</option>
+                  <option value="type_3_1">ព្រែកជីកបុរាណ</option>
+                  <option value="type_3_2">បារាយណ៍</option>
+                  <option value="type_3_3">ស្រះបុរាណ</option>
+                  <option value="type_3_4">ត្រពាំងបុរាណ</option>
+                  <option value="type_4_1">ផ្លូវបុរាណ</option>
+                  <option value="type_4_2">ស្ពានបុរាណ</option>
+                  <option value="type_5_1">ឡដុតកុលាលភាជន៍</option>
+                  <option value="type_5_2">ឡស្លលោហៈ</option>
+                  <option value="type_6">ភូមិមូលបុរាណ</option>
+                  <option value="type_7_1">ថ្មភក់</option>
+                  <option value="type_7_2">ថ្មបាយក្រៀម</option>
+                  <option value="type_7_3">លោហៈ</option>
+                  <option value="type_8_1">ពើងមានគំនូរបុរេប្រវត្តិសាស្រ្ត</option>
+                  <option value="type_8_2">ពើងផ្ទាំងថ្មមានចម្លាក់</option>
+                  <option value="type_8_3">ពើងកប់សព</option>
+                  <option value="type_8_4">ពើងទីសក្ការៈបូជា</option>
+                  <option value="type_9_1">ល្អាងជាទីជម្រកទបស់មនុស្ស</option>
+                  <option value="type_9_2">ល្អាងជាកន្លែងកប់សព</option>
+                  <option value="type_9_3">ល្អាងជាទីសក្ការៈបូរជា</option>
+                  <option value="type_10">បេតិកភណ្ឌក្រោមទឹក</option>
+                  <option value="Unknown_type_site">មិនទាន់កំណត់</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">ភូមិ</label>
+                <input type="text" v-model="village_kh" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">ឃុំ/សង្កាត់</label>
+                <input type="text" v-model="commune_kh" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">ស្រុក/ក្រុង/ខណ្ឌ</label>
+                <input type="text" v-model="district_kh" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">ខេត្ត/រាជធានី</label>
+                <input type="text" v-model="province_kh" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">លេខនិយាមកា</label>
+                <input type="text" v-model="coordinate_system" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">UTM_X</label>
+                <input type="text" v-model="utm_x" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">UTM_Y</label>
+                <input type="text" v-model="utm_y" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="form-label">ការពិពណ៌នា(Khmer)</label>
                 <textarea
                   class="form-control"
                   v-model="desc_kh"
@@ -151,7 +264,7 @@
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
-                <label class="form-label">ការពិពណ៌នាជាភាសាអង់គ្លេស</label>
+                <label class="form-label">ការពិពណ៌នា(English)</label>
                 <textarea
                   class="form-control"
                   v-model="desc_en"
@@ -215,6 +328,8 @@ export default {
       historicalSiteId: null, // To store the ID of the item being edited
       title_kh: "", // To bind the title in Khmer
       title_en: "", // To bind the title in English
+      site_number: "",
+      ik_number: "",
       desc_kh: "", // To bind the description in Khmer
       desc_en: "", // To bind the description in English
       is_enable: true, // To track whether the item is enabled or not
@@ -280,6 +395,8 @@ export default {
             id: this.historicalSiteId,
             title_kh: this.title_kh,
             title_en: this.title_en,
+            site_number: this.site_number,
+            ik_number: this.ik_number,
             desc_kh: this.desc_kh,
             desc_en: this.desc_en,
             img: null,
@@ -302,6 +419,8 @@ export default {
           const result = await HistoricalSiteService.Create({
             title_kh: this.title_kh,
             title_en: this.title_en,
+            site_number: this.site_number,
+            ik_number: this.ik_number,
             desc_kh: this.desc_kh,
             desc_en: this.desc_en,
             is_enable: this.is_enable,
@@ -328,6 +447,8 @@ export default {
     clearForm() {
       this.title_kh = "";
       this.title_en = "";
+      this.site_number = "";
+      this.ik_number = "";
       this.desc_kh = "";
       this.desc_en = "";
       this.is_enable = true;
@@ -350,6 +471,8 @@ export default {
 
       this.title_kh = item.title_kh;
       this.title_en = item.title_en;
+      this.site_number = item.site_number;
+      this.ik_number = item.ik_number;
       this.desc_kh = item.desc_kh;
       this.desc_en = item.desc_en;
       this.is_enable = item.is_enable;

@@ -17,7 +17,7 @@
       <tr>
         <th scope="col">លេខរៀង</th>
         <th scope="col">រូបភាព</th>
-        <th scope="col">លេខ</th>
+        <th scope="col">លេខវត្ថុ</th>
         <th scope="col">ចំណងជើងភាសាខ្មែរ</th>
         <th scope="col">វត្ថុធាតុ</th>
         <th scope="col">សម័យកាល</th>
