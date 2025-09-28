@@ -100,7 +100,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label">ឈ្មោះ(Khmer)</label>
                 <input type="text" v-model="title_kh" class="form-control" />
@@ -108,7 +108,7 @@
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-md-12">
+            <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleFormControlInput1" class="form-label">ឈ្មោះ(Egnlish)</label>
                 <input type="text" v-model="title_en" class="form-control" />
@@ -202,7 +202,7 @@
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label">ឃុំ/សង្កាត់</label>
+                <label for="exampleFormControlInput1" class="form-label">ឃុំ/ស្រុក</label>
                 <input type="text" v-model="commune_kh" class="form-control" />
               </div>
             </div>
@@ -210,7 +210,7 @@
           <div class="row mt-3">
             <div class="col-md-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1" class="form-label">ស្រុក/ក្រុង/ខណ្ឌ</label>
+                <label for="exampleFormControlInput1" class="form-label">ខណ្ឌ/សង្កាត់</label>
                 <input type="text" v-model="district_kh" class="form-control" />
               </div>
             </div>

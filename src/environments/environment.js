@@ -1,5 +1,5 @@
 const environment = {
-  API_BASE_URL: "https://api-cultural-heritage.tcreativestudio.xyz",
+  API_BASE_URL: "http://api-cultural-heritage.tcreative.xyz",
 };
 
 export default environment;
