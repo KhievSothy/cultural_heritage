@@ -26,10 +26,11 @@ import DetailKNY from "@/components/DetailKNY.vue";
 import AdminLogin from "@/pages/AdminLogin.vue";
 import AdminDashboard from "@/pages/AdminDashboard.vue";
 import PageNotFound from "@/components/PageNotFound.vue";
-import HistoricalSiteAdmin from "@/components/HistoricalSiteAdmin.vue";
-import Dashboard from "@/components/Dashboard.vue";
+import HistoricalSiteAdmin from "@/components/admin/HistoricalSiteAdmin.vue";
+import Dashboard from "@/components/admin/Dashboard.vue";
 import Historical_Site_Detail from "@/components/Historical_Site_Detail.vue";
-import MissingArtefactAdmin from "@/components/MissingArtefactAdmin.vue";
+import MissingArtefactAdmin from "@/components/admin/MissingArtefactAdmin.vue";
+import ReturnedArtefactAdmin from "@/components/admin/ReturnedArtefactAdmin.vue";
 import { AuthService } from "@/services/auth.service";
 import { useToast } from "vue-toast-notification";
 
@@ -91,6 +92,11 @@ const routes = [
         name: "missing-artefact",
         component: MissingArtefactAdmin,
       },
+      {
+        path: "returned-artefact", // Change this to a relative path
+        name: "returned-artefact",
+        component: ReturnedArtefactAdmin,
+      }
     ],
   },
   {

@@ -312,7 +312,7 @@
 
 <script>
 import { HistoricalSiteService } from "@/services/historical_site.service";
-import environment from "../environments/environment";
+import environment from "../../environments/environment";
 
 export default {
   watch: {

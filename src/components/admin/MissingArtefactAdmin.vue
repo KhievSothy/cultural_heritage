@@ -454,7 +454,7 @@
 
 <script>
 import { MissingArtefactService } from "@/services/missing_artefact.service";
-import environment from "../environments/environment";
+import environment from "../../environments/environment";
 
 export default {
   watch: {

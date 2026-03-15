@@ -45,6 +45,17 @@
             <span style="margin-left: 20px">វត្ថុបុរាណបាត់</span>
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link
+            class="nav-link text-white py-3 px-4 d-flex align-items-center"
+            to="/admin-dashboard/returned-artefact"
+            activeClass="link_active"
+            exact-active-class="link_active"
+          >
+            <i class="fa-solid fa-monument"></i>
+            <span style="margin-left: 20px">វត្ថុប្រគល់មកវិញ</span>
+          </router-link>
+        </li>
       </ul>
     </nav>
 
@@ -152,7 +163,7 @@
 </template>
 
 <script>
-import router from "../routes/index";
+import router from "../../routes/index";
 export default {
   data() {
     return {

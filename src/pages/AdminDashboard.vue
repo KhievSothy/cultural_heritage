@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import AdminDashboardSection from "@/components/AdminDashboardSection.vue";
+import AdminDashboardSection from "@/components/admin/AdminDashboardSection.vue";
 
 export default {
   components: {

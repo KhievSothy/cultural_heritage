@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import AdminSection from "@/components/AdminLoginSection.vue";
+import AdminSection from "@/components/admin/AdminLoginSection.vue";
 
 export default {
   components: {
