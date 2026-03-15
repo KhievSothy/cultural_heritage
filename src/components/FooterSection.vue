@@ -15,8 +15,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2025 <a href="#">MCFA IT Team</a> Company. All rights reserved. 
-          <br>Design: MCFA IT Team</p>
+          <p>Copyright © 2025 <a href="#">MCFA IT Team</a> All rights reserved. 
+          <br>Designed by: MCFA IT Group</p>
         </div>
       </div>
       
