@@ -14,7 +14,7 @@
                 :key="index"
               >
                 <img
-                  :src="api_url + '/' + img"
+                  :src="api_url + '/' + img.path"
                   alt="img01"
                   class="img-fluid rounded"
                 />
@@ -58,6 +58,22 @@ export default {
     };
   },
   methods: {
+     getCoverImage(item) {
+
+    if (!item.img || item.img.length === 0) {
+      return null;
+    }
+
+    const cover =
+      item.img.find(
+        (img) => img.is_cover
+      );
+
+    return cover
+      ? cover.path
+      : item.img[0].path;
+  },
+
     async GetById(id) {
       try {
         this.item = await HistoricalSiteService.GetById(id);

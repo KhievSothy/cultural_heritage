@@ -357,68 +357,41 @@ export default {
     return {
       historical_site_data: [],
       current_lang: this.$i18n.locale,
-
       isEditing: false,
       historicalSiteId: null,
-
       title_kh: "",
       title_en: "",
       site_number: "",
       ik_number: "",
-
       desc_kh: "",
       desc_en: "",
-
       is_enable: true,
-
-      // MULTIPLE IMAGES
-      images: [
-        {
-          file: null,
-          preview: null,
-        },
-      ],
+      images: [{file: null, preview: null,},],
     };
   },
 
   methods: {
-    // =========================
-    // DOWNLOAD EXISTING IMAGE
-    // =========================
-    // async downloadImage(imageUrl) {
-    //   try {
-    //     const response = await fetch(imageUrl);
-    //     const blob = await response.blob();
-    //     const fileName = imageUrl.split("/").pop();
-    //     const file = new File(
-    //       [blob],
-    //       fileName,
-    //       {
-    //         type: blob.type,
-    //       }
-    //     );
-
-    //     this.images = [
-    //       {
-    //         file: file,
-    //         preview: imageUrl,
-    //       },
-    //     ];
-    //   } catch (error) {
-    //     console.error("Error downloading image:", error);
-    //   }
-    // },
-
-    // =========================
-    // ADD IMAGE INPUT
-    // =========================
     addMoreImage() {
       this.images.push({
         file: null,
         preview: null,
       });
     },
+    getCoverImage(item) {
 
+        if (!item.img || item.img.length === 0) {
+          return null;
+        }
+
+        const cover =
+          item.img.find(
+            (img) => img.is_cover
+          );
+
+        return cover
+          ? cover.path
+          : item.img[0].path;
+      },
     // =========================
     // REMOVE IMAGE INPUT
     // =========================
@@ -448,9 +421,7 @@ export default {
     ClearModal() {
       this.isEditing = false;
       this.historicalSiteId = null;
-
       this.clearForm();
-
       this.ClearImage();
     },
 
@@ -485,129 +456,93 @@ export default {
     // SUBMIT FORM
     // =========================
     async submitForm() {
-
       const formData = new FormData();
-
       // append all images
       this.images.forEach((item) => {
         if (item.file) {
           formData.append("images", item.file);
         }
       });
-
       try {
-
         // =========================
         // UPDATE
         // =========================
         if (this.isEditing) {
-
           await HistoricalSiteService.Update({
             id: this.historicalSiteId,
-
             title_kh: this.title_kh,
             title_en: this.title_en,
-
             site_number: this.site_number,
             ik_number: this.ik_number,
-
             desc_kh: this.desc_kh,
             desc_en: this.desc_en,
-
             is_enable: this.is_enable,
           });
-
           this.$toast.success(
             "Updated successfully!"
           );
-
           // upload images
           if (
             this.images.some(
               (img) => img.file
             )
           ) {
-
             try {
-
               await HistoricalSiteService.UploadImage(
                 this.historicalSiteId,
                 formData
               );
-
               this.$toast.success(
                 "Images Updated!"
               );
-
             } catch (error) {
               console.log(error);
             }
           }
-
         }
-
         // =========================
         // CREATE
         // =========================
         else {
-          const result =
-            await HistoricalSiteService.Create({
+          const result = await HistoricalSiteService.Create({
+            title_kh: this.title_kh,
+            title_en: this.title_en,
+            site_number: this.site_number,
+            ik_number: this.ik_number,
+            desc_kh: this.desc_kh,
+            desc_en: this.desc_en,
+            is_enable: this.is_enable,
+          });
 
-              title_kh: this.title_kh,
-              title_en: this.title_en,
+          this.$toast.success("Created successfully!");
 
-              site_number: this.site_number,
-              ik_number: this.ik_number,
+          // 👉 PUT IT HERE (AFTER CREATE SUCCESS)
+          const siteId = result._id || result.site?._id;
 
-              desc_kh: this.desc_kh,
-              desc_en: this.desc_en,
+          if (this.images.some(img => img.file)) {
+            const formData = new FormData();
 
-              is_enable: this.is_enable,
+            this.images.forEach(item => {
+              if (item.file) {
+                formData.append("images", item.file);
+              }
             });
 
-          this.$toast.success(
-            "Created successfully!"
-          );
+            await HistoricalSiteService.UploadImage(siteId, formData);
 
-          // upload images
-          if (
-            this.images.some(
-              (img) => img.file
-            )
-          ) {
-
-            try {
-
-              await HistoricalSiteService.UploadImage(
-                result._id,
-                formData
-              );
-
-              this.$toast.success(
-                "Images Uploaded!"
-              );
-
-            } catch (error) {
-              console.log(error);
-            }
+            //this.$toast.success("Images Uploaded!");
           }
         }
-
         // close modal
         document
           .getElementById("btnCloseModal")
           .click();
-
         // reset form
         this.clearForm();
-
         // reload data
         await this.GetAll();
-
       } catch (error) {
-
         console.log(error);
-
         this.$toast.error(
           "An error occurred."
         );
@@ -618,40 +553,28 @@ export default {
     // CLEAR FORM
     // =========================
     clearForm() {
-
       this.title_kh = "";
       this.title_en = "";
-
       this.site_number = "";
       this.ik_number = "";
-
       this.desc_kh = "";
       this.desc_en = "";
-
       this.is_enable = true;
-
       this.ClearImage();
     },
-
     // =========================
     // DELETE
     // =========================
     async Delete(id) {
-
       try {
-
         await HistoricalSiteService.DeletById(id);
-
         this.$toast.success(
           `Deleted Id: ${id}!`
         );
-
         await this.GetAll();
-
       } catch (error) {
 
         console.log(error);
-
         this.$toast.error(
           `Deleted Id: ${id} has failed!`
         );
@@ -682,16 +605,13 @@ export default {
       // IMAGES
       // =========================
       if (item.img && item.img.length > 0) {
-
           this.images = item.img.map((imgPath) => {
             return {
               file: null,
               preview: environment.API_BASE_URL + "/" + imgPath,
             };
           });
-
         } else {
-
           this.images = [
             {
               file: null,
@@ -702,7 +622,6 @@ export default {
 
     },
   },
-
   // =========================
   // MOUNTED
   // =========================

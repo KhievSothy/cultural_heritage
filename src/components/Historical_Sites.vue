@@ -25,7 +25,7 @@
           <img
             :src="
               item.img && item.img.length > 0
-                ? api_url + '/' + item.img[0]
+                ? api_url + '/' + getCoverImage(item)
                 : '/default-image.jpg'
             "
             class="rounded"
@@ -65,12 +65,34 @@ export default {
   },
   methods: {
     toDetail(id) {
-      this.$router.push("/historical_sites/detail/" + id);
+      this.$router.push(
+        "/historical_sites/detail/" + id
+      );
+    },
+    // GET COVER IMAGE
+    getCoverImage(item) {
+      if (
+        !item.img ||
+        item.img.length === 0
+      ) {
+        return null;
+      }
+      // find cover image
+      const cover =
+        item.img.find(
+          (img) => img.is_cover
+        );
+      // fallback first image
+      return cover
+        ? cover.path
+        : item.img[0].path;
     },
     async GetAll() {
       try {
-        this.historical_site_data = await HistoricalSiteService.GetEnabled();
+        this.historical_site_data =
+          await HistoricalSiteService.GetEnabled();
         //console.log(this.historical_site_data);
+
       } catch (error) {
         console.log(error);
       }
