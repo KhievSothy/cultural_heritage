@@ -1,5 +1,5 @@
 <template>
-  <h2>ទីតាំងស្ថានីយប្រវត្តិសាស្ត្រ</h2>
+  <h2>ប្រវត្តិសាស្ត្រ</h2>
   <button
     class="btn btn-primary mt-3"
     data-bs-toggle="modal"
@@ -72,7 +72,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="hsLabel">
-            {{ isEditing ? "កែប្រែ" : "បង្កើត" }} ទីតាំងស្ថានីយប្រវត្តិសាស្ត្រ
+            {{ isEditing ? "កែប្រែ" : "បង្កើត" }} ស្ថានីយប្រវត្តិសាស្ត្រ
           </h1>
           <button
             type="button"
@@ -82,21 +82,52 @@
             @click="clearForm()"
           ></button>
         </div>
-        <div class="modal-body">
+          <div class="modal-body">
           <div class="row">
-            <div class="col-md-12">
-              <img v-if="imagePreview" :src="imagePreview" class="rounded img-fluid mb-3" alt="Preview" />
+            <div
+              class="col-md-4 mb-3"
+              v-for="(item, index) in images"
+              :key="index"
+            >
+              <!-- Preview -->
+              <img
+                v-if="item.preview"
+                :src="item.preview"
+                class="rounded img-fluid mb-2"
+                alt="Preview"
+              />
+
+              <!-- File Input -->
+              <div class="input-group mb-2">
+                <input
+                  type="file"
+                  accept="image/*"
+                  @change="handleFileUpload($event, index)"
+                  class="form-control"
+                />
+
+                <label class="input-group-text">
+                  បញ្ចូលរូបភាព
+                </label>
+              </div>
+
+              <!-- Remove Button -->
+              <button
+                @click="removeImage(index)"
+                class="btn btn-danger btn-sm"
+                :disabled="images.length === 1"
+              >
+                លុបរូប
+              </button>
             </div>
           </div>
+
+          <!-- Add More -->
           <div class="row">
-            <div class="col-md-10">
-              <div class="input-group mb-3">
-                <input id="input_file" type="file" accept="image/*" @change="handleFileUpload" class="form-control"/>
-                <label class="input-group-text" for="inputGroupFile02">បញ្ចូលរូបភាព</label>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <button @click="ClearImage()" class="btn btn-danger" v-bind:disabled="!image"> លុបរូប </button>
+            <div class="col-md-12">
+              <button @click="addMoreImage" class="btn btn-primary">
+                + បន្ថែមរូបភាព
+              </button>
             </div>
           </div>
           <div class="row">
@@ -310,6 +341,7 @@
   </div>
 </template>
 
+
 <script>
 import { HistoricalSiteService } from "@/services/historical_site.service";
 import environment from "../../environments/environment";
@@ -317,158 +349,325 @@ import environment from "../../environments/environment";
 export default {
   watch: {
     "$i18n.locale"(newLocale) {
-      this.current_lang = newLocale; // Sync with Vue I18n
+      this.current_lang = newLocale;
     },
   },
+
   data() {
     return {
       historical_site_data: [],
       current_lang: this.$i18n.locale,
-      isEditing: false, // To track if we are editing an existing item
-      historicalSiteId: null, // To store the ID of the item being edited
-      title_kh: "", // To bind the title in Khmer
-      title_en: "", // To bind the title in English
+
+      isEditing: false,
+      historicalSiteId: null,
+
+      title_kh: "",
+      title_en: "",
       site_number: "",
       ik_number: "",
-      desc_kh: "", // To bind the description in Khmer
-      desc_en: "", // To bind the description in English
-      is_enable: true, // To track whether the item is enabled or not
-      image: null,
-      imagePreview: null,
+
+      desc_kh: "",
+      desc_en: "",
+
+      is_enable: true,
+
+      // MULTIPLE IMAGES
+      images: [
+        {
+          file: null,
+          preview: null,
+        },
+      ],
     };
   },
+
   methods: {
-    async downloadImage(imageUrl) {
-      try {
-        // Fetch the image
-        const response = await fetch(imageUrl);
-        const blob = await response.blob();
+    // =========================
+    // DOWNLOAD EXISTING IMAGE
+    // =========================
+    // async downloadImage(imageUrl) {
+    //   try {
+    //     const response = await fetch(imageUrl);
+    //     const blob = await response.blob();
+    //     const fileName = imageUrl.split("/").pop();
+    //     const file = new File(
+    //       [blob],
+    //       fileName,
+    //       {
+    //         type: blob.type,
+    //       }
+    //     );
 
-        // Extract the file name from the URL
-        const fileName = imageUrl.split("/").pop(); // Get the last part of the URL
+    //     this.images = [
+    //       {
+    //         file: file,
+    //         preview: imageUrl,
+    //       },
+    //     ];
+    //   } catch (error) {
+    //     console.error("Error downloading image:", error);
+    //   }
+    // },
 
-        // Create a file from the blob
-        const file = new File([blob], fileName, { type: blob.type });
+    // =========================
+    // ADD IMAGE INPUT
+    // =========================
+    addMoreImage() {
+      this.images.push({
+        file: null,
+        preview: null,
+      });
+    },
 
-        // Assign the file to this.image (to handle it in your form or other logic)
-        this.image = file;
-      } catch (error) {
-        console.error("Error downloading image:", error);
+    // =========================
+    // REMOVE IMAGE INPUT
+    // =========================
+    removeImage(index) {
+      this.images.splice(index, 1);
+
+      if (this.images.length === 0) {
+        this.addMoreImage();
       }
     },
+
+    // =========================
+    // CLEAR IMAGES
+    // =========================
     ClearImage() {
-      this.imagePreview = null;
-      this.image = null;
-      document.getElementById("input_file").value = "";
+      this.images = [
+        {
+          file: null,
+          preview: null,
+        },
+      ];
     },
+
+    // =========================
+    // CLEAR MODAL
+    // =========================
     ClearModal() {
       this.isEditing = false;
-      this.imagePreview = null;
-      this.image = null;
-      document.getElementById("input_file").value = "";
+      this.historicalSiteId = null;
+
+      this.clearForm();
+
+      this.ClearImage();
     },
-    handleFileUpload(event) {
-      this.image = event.target.files[0];
-      if (this.image) {
-        this.imagePreview = URL.createObjectURL(this.image);
+
+    // =========================
+    // HANDLE FILE UPLOAD
+    // =========================
+    handleFileUpload(event, index) {
+      const file = event.target.files[0];
+
+      if (file) {
+        this.images[index].file = file;
+
+        this.images[index].preview =
+          URL.createObjectURL(file);
       }
     },
+
+    // =========================
+    // GET ALL
+    // =========================
     async GetAll() {
       try {
-        this.historical_site_data = await HistoricalSiteService.GetAll();
-        //console.log(this.historical_site_data);
+        this.historical_site_data =
+          await HistoricalSiteService.GetAll();
+
       } catch (error) {
         console.log(error);
       }
     },
+
+    // =========================
+    // SUBMIT FORM
+    // =========================
     async submitForm() {
-      // Add logic to create or update the historical site data
+
       const formData = new FormData();
 
-      if (this.image) {
-        formData.append("image", this.image);
-      }
+      // append all images
+      this.images.forEach((item) => {
+        if (item.file) {
+          formData.append("images", item.file);
+        }
+      });
 
       try {
+
+        // =========================
+        // UPDATE
+        // =========================
         if (this.isEditing) {
+
           await HistoricalSiteService.Update({
             id: this.historicalSiteId,
+
             title_kh: this.title_kh,
             title_en: this.title_en,
+
             site_number: this.site_number,
             ik_number: this.ik_number,
+
             desc_kh: this.desc_kh,
             desc_en: this.desc_en,
-            img: null,
+
             is_enable: this.is_enable,
           });
-          this.$toast.success("Updated successfully!");
 
-          if (this.image) {
+          this.$toast.success(
+            "Updated successfully!"
+          );
+
+          // upload images
+          if (
+            this.images.some(
+              (img) => img.file
+            )
+          ) {
+
             try {
+
               await HistoricalSiteService.UploadImage(
                 this.historicalSiteId,
                 formData
               );
-              this.$toast.success("Image Updated!");
+
+              this.$toast.success(
+                "Images Updated!"
+              );
+
             } catch (error) {
               console.log(error);
             }
           }
-        } else {
-          const result = await HistoricalSiteService.Create({
-            title_kh: this.title_kh,
-            title_en: this.title_en,
-            site_number: this.site_number,
-            ik_number: this.ik_number,
-            desc_kh: this.desc_kh,
-            desc_en: this.desc_en,
-            is_enable: this.is_enable,
-          });
-          this.$toast.success("Created successfully!");
 
-          if (this.image) {
+        }
+
+        // =========================
+        // CREATE
+        // =========================
+        else {
+          const result =
+            await HistoricalSiteService.Create({
+
+              title_kh: this.title_kh,
+              title_en: this.title_en,
+
+              site_number: this.site_number,
+              ik_number: this.ik_number,
+
+              desc_kh: this.desc_kh,
+              desc_en: this.desc_en,
+
+              is_enable: this.is_enable,
+            });
+
+          this.$toast.success(
+            "Created successfully!"
+          );
+
+          // upload images
+          if (
+            this.images.some(
+              (img) => img.file
+            )
+          ) {
+
             try {
-              await HistoricalSiteService.UploadImage(result._id, formData);
-              this.$toast.success("Image Uploaded!");
+
+              await HistoricalSiteService.UploadImage(
+                result._id,
+                formData
+              );
+
+              this.$toast.success(
+                "Images Uploaded!"
+              );
+
             } catch (error) {
               console.log(error);
             }
           }
         }
-        document.getElementById("btnCloseModal").click();
 
-        this.clearForm(); // Optionally clear form after submission
+        // close modal
+        document
+          .getElementById("btnCloseModal")
+          .click();
+
+        // reset form
+        this.clearForm();
+
+        // reload data
         await this.GetAll();
+
       } catch (error) {
-        this.$toast.error("An error occurred.");
+
+        console.log(error);
+
+        this.$toast.error(
+          "An error occurred."
+        );
       }
     },
+
+    // =========================
+    // CLEAR FORM
+    // =========================
     clearForm() {
+
       this.title_kh = "";
       this.title_en = "";
+
       this.site_number = "";
       this.ik_number = "";
+
       this.desc_kh = "";
       this.desc_en = "";
+
       this.is_enable = true;
+
+      this.ClearImage();
     },
+
+    // =========================
+    // DELETE
+    // =========================
     async Delete(id) {
+
       try {
+
         await HistoricalSiteService.DeletById(id);
-        this.$toast.success(`Deleted Id: ${id}!`);
+
+        this.$toast.success(
+          `Deleted Id: ${id}!`
+        );
+
         await this.GetAll();
+
       } catch (error) {
-        this.$toast.error(`Deleted Id: ${id} has failed!`);
+
         console.log(error);
+
+        this.$toast.error(
+          `Deleted Id: ${id} has failed!`
+        );
       }
     },
+
+    // =========================
+    // EDIT
+    // =========================
     async Edit(id) {
-      document.getElementById("input_file").value = "";
-      const item = this.historical_site_data.find((i) => i._id === id);
-
-      console.log(item);
-
+      this.ClearImage();
+      const item =
+        this.historical_site_data.find(
+          (i) => i._id === id
+        );
+      if (!item) return;
       this.title_kh = item.title_kh;
       this.title_en = item.title_en;
       this.site_number = item.site_number;
@@ -478,20 +677,40 @@ export default {
       this.is_enable = item.is_enable;
       this.historicalSiteId = item._id;
       this.isEditing = true;
-      if (item.img) {
-        this.imagePreview = environment.API_BASE_URL + `/${item.img}`;
-        await this.downloadImage(environment.API_BASE_URL + `/${item.img}`);
-      } else {
-        this.ClearImage();
-      }
+
+      // =========================
+      // IMAGES
+      // =========================
+      if (item.img && item.img.length > 0) {
+
+          this.images = item.img.map((imgPath) => {
+            return {
+              file: null,
+              preview: environment.API_BASE_URL + "/" + imgPath,
+            };
+          });
+
+        } else {
+
+          this.images = [
+            {
+              file: null,
+              preview: null,
+            },
+          ];
+        }
+
     },
   },
+
+  // =========================
+  // MOUNTED
+  // =========================
   async mounted() {
     await this.GetAll();
   },
 };
 </script>
-
 <style>
 table,
 tr,

@@ -4,9 +4,20 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="item-MN">
-            <div class="col-lg-12">
-              <div class="image">
-                <img :src="api_url + '/' + item.img" alt="img01" />
+            <div
+              v-if="item.img && item.img.length > 0"
+              class="col-lg-12"
+            >
+              <div
+                class="image mb-2"
+                v-for="(img, index) in item.img"
+                :key="index"
+              >
+                <img
+                  :src="api_url + '/' + img"
+                  alt="img01"
+                  class="img-fluid rounded"
+                />
               </div>
             </div>
             <div class="col-lg-12 align-self-center">

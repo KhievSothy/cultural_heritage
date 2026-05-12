@@ -23,8 +23,12 @@
         <!-- Image Section -->
         <div class="img-container">
           <img
+            :src="
+              item.img && item.img.length > 0
+                ? api_url + '/' + item.img[0]
+                : '/default-image.jpg'
+            "
             class="rounded"
-            :src="api_url + '/' + item.img"
             alt="Historical Site"
           />
         </div>
