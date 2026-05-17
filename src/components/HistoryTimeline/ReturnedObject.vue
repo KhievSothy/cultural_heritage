@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h4>3D of Returned Object</h4>
-          <h2>Khmer Missing Artefacts</h2>
+          <h4><br>3D of Returned Object</h4>
+          <h2><br>Khmer Missing Artefacts</h2>
         </div>
       </div>
     </div>

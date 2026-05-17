@@ -6,7 +6,7 @@
   </div>
   <div class="timeline">
     <div class="timeline-item" data-text="Prehistoric Period">
-      <div class="timeline__content"><img class="timeline__img" src="http://nokorwatnews.com/wp-content/uploads/2023/12/IMG_6254.jpeg"/>
+      <div class="timeline__content"><img class="timeline__img" src="https://helloangkor.com/wp-content/uploads/2024/01/IMG_20230818_145751-1-1024x768.jpg"/>
         <h2 class="timeline__content-title">Before 1st Century CE</h2>
         <p class="timeline__content-desc">Early human settlements existed in present-day Cambodia for thousands of years. Archaeological discoveries show farming, bronze tools, and early trade networks. Sites such as Laang Spean Cave reveal prehistoric culture.</p>
       </div>
