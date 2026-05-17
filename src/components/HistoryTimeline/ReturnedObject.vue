@@ -1,16 +1,6 @@
 <template>
-    <div class="M-heading">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h4><br>3D of Returned Object</h4>
-          <h2><br>Khmer Missing Artefacts</h2>
-        </div>
-      </div>
-    </div>
-  </div>
   <div>
-    <div class="info">
+    <div class="info"><br><br><br>
       ✦ 3D Geometric Aura ✦ |
       <span style="color:#88ccff">Drag to rotate view</span>
     </div>
