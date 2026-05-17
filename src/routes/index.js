@@ -33,6 +33,8 @@ import MissingArtefactAdmin from "@/components/admin/MissingArtefactAdmin.vue";
 import ReturnedArtefactAdmin from "@/components/admin/ReturnedArtefactAdmin.vue";
 import { AuthService } from "@/services/auth.service";
 import { useToast } from "vue-toast-notification";
+import HistoryTimeline from "@/pages/HistoryTimeline.vue";
+import ReturnedObject from "@/pages/ReturnedObject.vue";
 
 const $toast = useToast();
 
@@ -70,6 +72,8 @@ const routes = [
   { path: "/water_festival", component: DetailWF },
   { path: "/pchum_ben", component: DetailBB },
   { path: "/khmer_new_year", component: DetailKNY },
+  { path: "/history_timeline", component: HistoryTimeline },
+  { path: "/returned_object", component: ReturnedObject },
   { path: "/admin-login", name: "admin-login", component: AdminLogin },
   {
     path: "/admin-dashboard",
