@@ -103,253 +103,396 @@ Angkor Wat became a major <i><strong>world tourism destination</strong></i> and 
 <!-- <div class="demo-footer"><a href="http://www.turkishnews.com/Ataturk/life.htm" target="_blank">Source/Kaynak</a></div> -->
 </template>
 <script>
-import $ from "jquery";
-
 export default {
   mounted() {
+    const timeline = document.querySelector("#timeline-1");
+    const items = document.querySelectorAll(".timeline-item");
+    const activeClass = "timeline-item--active";
 
-    (function($) {
-      $.fn.timeline = function() {
-        var selectors = {
-          id: $(this),
-          item: $(this).find(".timeline-item"),
-          activeClass: "timeline-item--active",
-          img: ".timeline__img"
-        };
+    function updateTimeline() {
+      const scrollTop = window.pageYOffset;
 
-        selectors.item.eq(0).addClass(selectors.activeClass);
+      items.forEach((item) => {
+        const min = item.offsetTop;
+        const max = min + item.offsetHeight;
 
-        selectors.id.css(
-          "background-image",
-          "url(" +
-            selectors.item.first().find(selectors.img).attr("src") +
-            ")"
-        );
+        if (scrollTop >= min - 300 && scrollTop < max) {
+          items.forEach((el) => el.classList.remove(activeClass));
 
-        var itemLength = selectors.item.length;
+          item.classList.add(activeClass);
 
-        $(window).scroll(function() {
-          var max, min;
-          var pos = $(this).scrollTop();
+          const img = item.querySelector(".timeline__img");
 
-          selectors.item.each(function(i) {
-            min = $(this).offset().top;
-            max = $(this).height() + $(this).offset().top;
+          if (img) {
+            timeline.style.backgroundImage = `url(${img.src})`;
+          }
+        }
+      });
+    }
 
-            if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+    if (items.length > 0) {
+      items[0].classList.add(activeClass);
 
-              selectors.item.removeClass(selectors.activeClass);
+      const firstImg = items[0].querySelector(".timeline__img");
 
-              selectors.id.css(
-                "background-image",
-                "url(" +
-                  selectors.item.last().find(selectors.img).attr("src") +
-                  ")"
-              );
+      if (firstImg) {
+        timeline.style.backgroundImage = `url(${firstImg.src})`;
+      }
+    }
 
-              selectors.item.last().addClass(selectors.activeClass);
+    window.addEventListener("scroll", updateTimeline);
 
-            } else if (pos <= max - 40 && pos >= min) {
-
-              selectors.id.css(
-                "background-image",
-                "url(" +
-                  $(this).find(selectors.img).attr("src") +
-                  ")"
-              );
-
-              selectors.item.removeClass(selectors.activeClass);
-
-              $(this).addClass(selectors.activeClass);
-            }
-          });
-        });
-      };
-    })($);
-
-    $("#timeline-1").timeline();
+    updateTimeline();
   }
 };
 </script>
-<style scoped>
+<style>
 @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
-.timeline {
-  display: flex;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  flex-direction: column;
-  max-width: 700px;
-  position: relative;
-}
 
-.timeline__content-title {
-  font-weight: normal;
-  font-size: 66px;
-  margin: -10px 0 0 0;
-  transition: 0.4s;
-  padding: 0 10px;
-  box-sizing: border-box;
-  font-family: "Pathway Gothic One", sans-serif;
-  color: #fff;
-}
-
-.timeline__content-desc {
+html,
+body {
   margin: 0;
-  font-size: 15px;
-  box-sizing: border-box;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: Cardo;
-  font-weight: normal;
-  line-height: 25px;
+  padding: 0;
+  overflow-x: hidden;
+  background: #111;
+  font-family: "Cardo", serif;
 }
 
-.timeline:before {
+/* =========================
+   TIMELINE CONTAINER
+========================= */
+
+.timeline-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 100px 0;
+  overflow-x: hidden;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  transition: background-image 0.5s ease-in-out;
+}
+
+.timeline-container::before {
+  content: "";
   position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  z-index: 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.timeline-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-header__title {
+  color: #fff;
+  font-size: 52px;
+  margin: 0;
+
+  font-family: "Cardo", serif;
+  font-weight: 700;
+}
+
+.timeline-header__subtitle {
+  color: rgba(255, 255, 255, 0.6);
+
+  font-family: "Pathway Gothic One", sans-serif;
+
+  font-size: 18px;
+  letter-spacing: 6px;
+
+  margin-top: 15px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
   left: 50%;
+
   width: 2px;
   height: 100%;
-  margin-left: -1px;
-  content: "";
-  background: rgba(255, 255, 255, 0.07);
+
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateX(-50%);
 }
 
-@media only screen and (max-width: 767px) {
-  .timeline:before {
-    left: 40px;
-  }
-}
+/* =========================
+   TIMELINE ITEM
+========================= */
+
 .timeline-item {
-  padding: 40px 0;
+  width: calc(50% - 60px);
+
+  position: relative;
+
+  margin-bottom: 120px;
+
   opacity: 0.3;
   filter: blur(2px);
-  transition: 0.5s;
-  box-sizing: border-box;
-  width: calc(50% - 40px);
-  display: flex;
-  position: relative;
-  transform: translateY(-80px);
+
+  transform: translateY(50px);
+
+  transition: all 0.6s ease;
 }
 
-.timeline-item:before {
-  content: attr(data-text);
-  letter-spacing: 3px;
-  width: 100%;
-  position: absolute;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 13px;
-  font-family: "Pathway Gothic One", sans-serif;
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
-  top: 70%;
-  margin-top: -5px;
-  padding-left: 15px;
-  opacity: 0;
-  right: calc(-100% - 56px);
+.timeline-item:nth-child(odd) {
+  align-self: flex-start;
 }
 
 .timeline-item:nth-child(even) {
   align-self: flex-end;
 }
 
-.timeline-item:nth-child(even):before {
-  right: auto;
-  text-align: right;
-  left: calc(-100% - 56px);
-  padding-left: 0;
-  border-left: none;
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  padding-right: 15px;
-}
-
 .timeline-item--active {
   opacity: 1;
+  filter: blur(0);
   transform: translateY(0);
-  filter: blur(0px);
 }
 
-.timeline-item--active:before {
+/* =========================
+   DATE LABEL
+========================= */
+
+.timeline-item::before {
+  content: attr(data-text);
+
+  position: absolute;
+
   top: 50%;
-  transition: 0.3s all 0.2s;
+  transform: translateY(-50%);
+
+  font-family: "Pathway Gothic One", sans-serif;
+
+  font-size: 14px;
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transition: all 0.4s ease;
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -220px;
+
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+
+  padding-left: 20px;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -220px;
+
+  border-right: 2px solid rgba(255, 255, 255, 0.4);
+
+  padding-right: 20px;
+
+  text-align: right;
+}
+
+.timeline-item--active::before {
   opacity: 1;
 }
 
-.timeline-item--active .timeline__content-title {
-  margin: -50px 0 20px 0;
+/* =========================
+   CONTENT BOX
+========================= */
+
+.timeline__content {
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(6px);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.3s ease;
 }
 
-@media only screen and (max-width: 767px) {
-  .timeline-item {
-    align-self: baseline !important;
-    width: 100%;
-    padding: 0 30px 150px 80px;
-  }
-  .timeline-item:before {
-    left: 10px !important;
-    padding: 0 !important;
-    top: 50px;
-    text-align: center !important;
-    width: 60px;
-    border: none !important;
-  }
-  .timeline-item:last-child {
-    padding-bottom: 40px;
-  }
+.timeline__content:hover {
+  transform: translateY(-5px);
 }
+
+/* =========================
+   IMAGE
+========================= */
+
 .timeline__img {
-  max-width: 100%;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-}
-
-.timeline-container {
   width: 100%;
-  position: relative;
-  padding: 80px 0;
-  transition: 0.3s ease 0s;
-  background-attachment: fixed;
-  background-size: cover;
+  height: 320px;
+
+  object-fit: cover;
+
+  display: block;
 }
 
-.timeline-container:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(99, 99, 99, 0.8);
-  content: "";
-}
+/* =========================
+   TITLE
+========================= */
 
-.timeline-header {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 80px;
-  position: relative;
-}
-
-.timeline-header__title {
+.timeline__content-title {
   color: #fff;
-  font-size: 46px;
-  font-family: Cardo;
-  font-weight: normal;
-  margin: 0;
-}
 
-.timeline-header__subtitle {
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 48px;
+
+  margin: 30px 30px 20px;
+
   font-family: "Pathway Gothic One", sans-serif;
+
+  line-height: 1;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.timeline__content-desc {
+  color: rgba(255, 255, 255, 0.8);
+
   font-size: 16px;
-  letter-spacing: 5px;
-  margin: 10px 0 0 0;
-  font-weight: normal;
+  line-height: 1.8;
+
+  margin: 0;
+  padding: 0 30px 35px;
+
+  font-family: "Cardo", serif;
 }
 
-.demo-footer {
-  padding: 60px 0;
-  text-align: center;
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media screen and (max-width: 992px) {
+  .timeline {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    width: 100%;
+
+    padding-left: 80px;
+
+    margin-bottom: 80px;
+
+    align-self: flex-start !important;
+  }
+
+  .timeline-item::before {
+    left: 0 !important;
+    right: auto !important;
+
+    width: 60px;
+
+    text-align: left !important;
+
+    border: none !important;
+
+    padding: 0 !important;
+
+    top: -35px;
+
+    transform: none;
+  }
+
+  .timeline__img {
+    height: 240px;
+  }
+
+  .timeline__content-title {
+    font-size: 34px;
+  }
+
+  .timeline-header__title {
+    font-size: 36px;
+  }
 }
 
-.demo-footer a {
-  color: #999;
-  display: inline-block;
-  font-family: Cardo;
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media screen and (max-width: 576px) {
+  .timeline-container {
+    padding: 60px 0;
+  }
+
+  .timeline-header {
+    margin-bottom: 60px;
+  }
+
+  .timeline-header__title {
+    font-size: 30px;
+  }
+
+  .timeline-header__subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .timeline-item {
+    padding-left: 60px;
+  }
+
+  .timeline__img {
+    height: 200px;
+  }
+
+  .timeline__content-title {
+    font-size: 28px;
+
+    margin: 20px 20px 15px;
+  }
+
+  .timeline__content-desc {
+    font-size: 15px;
+
+    padding: 0 20px 25px;
+  }
 }
 </style>

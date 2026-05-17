@@ -6,6 +6,7 @@
       <div class="section-heading">
         <h2>{{ $t("Visit_One_Title") }}</h2>
         <p>{{ $t("Visit_One") }}</p>
+        
       </div>
     </div>
   </div>
