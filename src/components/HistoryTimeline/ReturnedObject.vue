@@ -4,18 +4,52 @@
       ✦ 3D Geometric Aura ✦ |
       <span style="color:#88ccff">Drag to rotate view</span>
     </div>
-
     <div id="loading">Loading 3D Model...</div>
-
     <div ref="canvasContainer"></div>
+    <!-- Artifact Information Panel -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <h2>Head Sculpture</h2>
+        <span class="artifact-id">INV-2026-001</span>
+      </div>
+
+      <div class="artifact-field">
+        <label>Medium</label>
+        <p>Sandstone</p>
+      </div>
+
+      <div class="artifact-field">
+        <label>Period</label>
+        <p>Angkor Period (12th Century)</p>
+      </div>
+
+      <div class="artifact-field">
+        <label>Style</label>
+        <p>Bayon Style</p>
+      </div>
+
+      <div class="artifact-field">
+        <label>Provenance</label>
+        <p>Siem Reap Province, Cambodia</p>
+      </div>
+
+      <div class="artifact-field">
+        <label>Description</label>
+        <p>
+          Sandstone head sculpture exhibiting stylistic
+          characteristics of the Bayon artistic tradition.
+          The artifact demonstrates refined carving
+          techniques and religious symbolism associated
+          with the late Angkorian period.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import * as THREE from "three";
-
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default {
@@ -241,7 +275,142 @@ body {
   color: white;
   font-family: sans-serif;
 }
+.viewer-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 
+.artifact-card {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+
+  width: 380px;
+  max-height: 80vh;
+
+  overflow-y: auto;
+
+  padding: 24px;
+
+  background: rgba(10, 15, 25, 0.85);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(136, 204, 255, 0.2);
+  border-radius: 18px;
+
+  color: white;
+  z-index: 15;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.4),
+    0 0 30px rgba(68,136,255,.15);
+}
+
+.artifact-header {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.artifact-header h2 {
+  margin: 0;
+  color: #88ccff;
+  font-size: 1.7rem;
+}
+
+.artifact-id {
+  font-size: 0.8rem;
+  opacity: .6;
+}
+
+.artifact-field {
+  margin-bottom: 18px;
+}
+
+.artifact-field label {
+  display: block;
+  color: #88ccff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.artifact-field p {
+  margin: 0;
+  line-height: 1.6;
+  color: #d8d8d8;
+}
+.viewer-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.artifact-card {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+
+  width: 380px;
+  max-height: 80vh;
+
+  overflow-y: auto;
+
+  padding: 24px;
+
+  background: rgba(10, 15, 25, 0.85);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(136, 204, 255, 0.2);
+  border-radius: 18px;
+
+  color: white;
+  z-index: 15;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.4),
+    0 0 30px rgba(68,136,255,.15);
+}
+
+.artifact-header {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.artifact-header h2 {
+  margin: 0;
+  color: #88ccff;
+  font-size: 1.7rem;
+}
+
+.artifact-id {
+  font-size: 0.8rem;
+  opacity: .6;
+}
+
+.artifact-field {
+  margin-bottom: 18px;
+}
+
+.artifact-field label {
+  display: block;
+  color: #88ccff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.artifact-field p {
+  margin: 0;
+  line-height: 1.6;
+  color: #d8d8d8;
+}
 #loading {
   position: absolute;
   top: 50%;
