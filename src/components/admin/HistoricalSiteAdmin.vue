@@ -59,7 +59,6 @@
   <!-- Modal -->
 
   <div
-    v-show="isEditing"
     class="modal fade"
     id="hsModal"
     data-bs-backdrop="static"
@@ -70,6 +69,7 @@
   >
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
+        
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="hsLabel">
             {{ isEditing ? "កែប្រែ" : "បង្កើត" }} ស្ថានីយប្រវត្តិសាស្ត្រ
@@ -82,7 +82,8 @@
             @click="clearForm()"
           ></button>
         </div>
-          <div class="modal-body">
+        
+        <div class="modal-body">
           <div class="row">
             <div
               class="col-md-4 mb-3"
@@ -105,10 +106,6 @@
                   @change="handleFileUpload($event, index)"
                   class="form-control"
                 />
-
-                <label class="input-group-text">
-                  បញ្ចូលរូបភាព
-                </label>
               </div>
 
               <!-- Remove Button -->
@@ -130,6 +127,8 @@
               </button>
             </div>
           </div>
+
+
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
@@ -421,8 +420,19 @@ export default {
     ClearModal() {
       this.isEditing = false;
       this.historicalSiteId = null;
-      this.clearForm();
-      this.ClearImage();
+
+      this.title_kh = "";
+      this.title_en = "";
+      this.site_number = "";
+      this.ik_number = "";
+      this.desc_kh = "";
+      this.desc_en = "";
+      this.is_enable = true;
+
+      this.images = [{
+        file: null,
+        preview: null,
+      }];
     },
 
     // =========================
@@ -456,20 +466,25 @@ export default {
     // SUBMIT FORM
     // =========================
     async submitForm() {
+      console.log("isEditing =", this.isEditing);
+      console.log("historicalSiteId =", this.historicalSiteId);
+
       const formData = new FormData();
-      // append all images
+
       this.images.forEach((item) => {
         if (item.file) {
           formData.append("images", item.file);
         }
       });
+
       try {
+
         // =========================
         // UPDATE
         // =========================
-        if (this.isEditing) {
-          await HistoricalSiteService.Update({
-            id: this.historicalSiteId,
+        if (this.isEditing && this.historicalSiteId) {
+
+          const payload = {
             title_kh: this.title_kh,
             title_en: this.title_en,
             site_number: this.site_number,
@@ -477,33 +492,34 @@ export default {
             desc_kh: this.desc_kh,
             desc_en: this.desc_en,
             is_enable: this.is_enable,
+          };
+
+          await HistoricalSiteService.Update({
+            id: this.historicalSiteId,
+            ...payload,
           });
-          this.$toast.success(
-            "Updated successfully!"
-          );
-          // upload images
-          if (
-            this.images.some(
-              (img) => img.file
-            )
-          ) {
-            try {
-              await HistoricalSiteService.UploadImage(
-                this.historicalSiteId,
-                formData
-              );
-              this.$toast.success(
-                "Images Updated!"
-              );
-            } catch (error) {
-              console.log(error);
-            }
+
+          // upload new images only
+          if (this.images.some(img => img.file)) {
+            await HistoricalSiteService.UploadImage(
+              this.historicalSiteId,
+              formData
+            );
           }
+
+          this.$toast.success("Updated successfully!");
+
+          // Close and clear ONLY after success
+          document.getElementById("btnCloseModal").click();
+          this.ClearModal();
+          await this.GetAll();
         }
+
         // =========================
         // CREATE
         // =========================
         else {
+
           const result = await HistoricalSiteService.Create({
             title_kh: this.title_kh,
             title_en: this.title_en,
@@ -514,37 +530,33 @@ export default {
             is_enable: this.is_enable,
           });
 
-          this.$toast.success("Created successfully!");
-
-          // 👉 PUT IT HERE (AFTER CREATE SUCCESS)
           const siteId = result._id || result.site?._id;
 
           if (this.images.some(img => img.file)) {
-            const formData = new FormData();
-
-            this.images.forEach(item => {
-              if (item.file) {
-                formData.append("images", item.file);
-              }
-            });
-
-            await HistoricalSiteService.UploadImage(siteId, formData);
-
-            //this.$toast.success("Images Uploaded!");
+            await HistoricalSiteService.UploadImage(
+              siteId,
+              formData
+            );
           }
+
+          this.$toast.success("Created successfully!");
+
+          // Close and clear ONLY after success
+          document.getElementById("btnCloseModal").click();
+          this.ClearModal();
+          await this.GetAll();
         }
-        // close modal
-        document
-          .getElementById("btnCloseModal")
-          .click();
-        // reset form
-        this.clearForm();
-        // reload data
-        await this.GetAll();
+
       } catch (error) {
+
+        console.log("Status:", error.response?.status);
+        console.log("Data:", error.response?.data);
         console.log(error);
+
+        // DO NOT clear form or close modal here
         this.$toast.error(
-          "An error occurred."
+          error.response?.data?.message ||
+          "Please check required fields."
         );
       }
     },
@@ -605,12 +617,10 @@ export default {
       // IMAGES
       // =========================
       if (item.img && item.img.length > 0) {
-          this.images = item.img.map((imgPath) => {
-            return {
-              file: null,
-              preview: environment.API_BASE_URL + "/" + imgPath,
-            };
-          });
+          this.images = item.img.map((img) => ({
+  file: null,
+  preview: environment.API_BASE_URL + "/" + img.path,
+}));
         } else {
           this.images = [
             {
